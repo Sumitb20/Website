@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Invitation — Build Tek CORE Summit 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #050409;
+      --navy-mid: #0d0b1a;
+      --navy-light: #121026;
+      --navy-border: rgba(255, 255, 255, 0.08);
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-dim: rgba(212, 175, 55, 0.15);
+      --gold-border: rgba(212, 175, 55, 0.3);
+      --white: #f5f3ee;
+      --muted: #8fa0bb;
+      --text: #d8deea;
+      --error: #e05c5c;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 50%, #0d0b1a 0%, #050409 100%);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    .page-wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      border-radius: 40px;
+      padding: 6px 16px;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 480px;
+      margin-bottom: 48px;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--gold-border), transparent);
+      margin-bottom: 48px;
+    }
+
+    .form-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 24px 32px 16px;
+      border-bottom: 1px solid var(--navy-border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-num {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .section-body {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--navy-border);
+    }
+
+    .section-body:last-of-type {
+      border-bottom: none;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 540px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header,
+      .section-body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .page-wrapper {
+        padding: 32px 16px 60px;
+      }
+
+      .submit-area {
+        padding: 24px 20px;
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    label span.req {
+      color: var(--gold);
+      margin-left: 2px;
+    }
+
+    input,
+    select,
+    textarea {
+      background: var(--navy-light);
+      border: 1px solid var(--navy-border);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      padding: 12px 16px;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold-border);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238fa0bb' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+
+    select option {
+      background: var(--navy-mid);
+      color: var(--white);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      line-height: 1.6;
+    }
+
+    .phone-wrap {
+      display: flex;
+      gap: 0;
+    }
+
+    .phone-prefix {
+      background: var(--navy-border);
+      border: 1px solid var(--navy-border);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--muted);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .phone-wrap input {
+      border-radius: 0 8px 8px 0;
+      border-left: 1px solid var(--navy-border);
+    }
+
+    .multi-check {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    @media (max-width: 540px) {
+      .multi-check {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy-light);
+      border: 1px solid var(--navy-border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      user-select: none;
+    }
+
+    .check-item:hover {
+      border-color: var(--gold-border);
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      padding: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      accent-color: var(--gold);
+      background: var(--navy);
+    }
+
+    .check-item span {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    .check-item:has(input:checked) {
+      border-color: var(--gold-border);
+      background: var(--gold-dim);
+    }
+
+    .check-item:has(input:checked) span {
+      color: var(--gold-light);
+    }
+
+    .declaration-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--navy-light);
+      border: 1px solid var(--navy-border);
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .declaration-box:hover {
+      border-color: var(--gold-border);
+    }
+
+    .declaration-box:has(input:checked) {
+      border-color: var(--gold-border);
+      background: var(--gold-dim);
+    }
+
+    .declaration-box input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      padding: 0;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+
+    .declaration-box p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .declaration-box a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .declaration-box a:hover {
+      text-decoration: underline;
+    }
+
+    .submit-area {
+      padding: 28px 32px;
+      background: var(--navy-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--navy-border);
+    }
+
+    .submit-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .submit-note strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      padding: 14px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-submit:hover {
+      background: var(--gold-light);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+
+    .btn-arrow {
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .btn-submit:hover .btn-arrow {
+      transform: translateX(3px);
+    }
+
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 60px 32px;
+    }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    .success-state h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .success-state p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-strip {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-strip p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-strip a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+
+    <a href="core-summit-2026.html" style="
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: color 0.2s;
+    letter-spacing: 0.04em;
+  " onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--muted)'">
+      ← Back to Summit
+    </a>
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Invite-Only — Curated Applications
+    </div>
+
+    <h1>Request Your <em>Invitation</em></h1>
+    <p class="subtitle">Build Tek CORE Summit 2026 is a hand-curated executive forum. Every delegate is personally
+      reviewed. Seats are limited to 500 senior decision-makers.</p>
+
+    <div class="divider"></div>
+
+    <form id="regForm" novalidate>
+      <div class="form-card">
+
+        <!-- Section 1 -->
+        <div class="section-header">
+          <div class="section-num">01</div>
+          <span class="section-label">Personal Details</span>
+        </div>
+        <div class="section-body">
+          <div class="grid-2" style="margin-bottom:16px">
+            <div class="field">
+              <label for="firstName">First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="firstName" placeholder="Rajesh" required>
+            </div>
+            <div class="field">
+              <label for="lastName">Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="lastName" placeholder="Sharma" required>
+            </div>
+          </div>
+          <div class="grid-2" style="margin-bottom:16px">
+            <div class="field">
+              <label for="designation">Designation / Title <span class="req">*</span></label>
+              <input type="text" id="designation" name="designation" placeholder="CEO / Director / VP" required>
+            </div>
+            <div class="field">
+              <label for="company">Company / Organisation <span class="req">*</span></label>
+              <input type="text" id="company" name="company" placeholder="Lodha Group" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="industry">Industry <span class="req">*</span></label>
+            <select id="industry" name="industry" required>
+              <option value="" disabled selected>Select your industry</option>
+              <option>Construction / EPC</option>
+              <option>Real Estate Development</option>
+              <option>Infrastructure</option>
+              <option>Architecture & Design</option>
+              <option>ConTech / PropTech</option>
+              <option>Infrastructure Finance / Investment</option>
+              <option>Government / Policy</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-header">
+          <div class="section-num">02</div>
+          <span class="section-label">Contact Information</span>
+        </div>
+        <div class="section-body">
+          <div class="grid-2" style="margin-bottom:16px">
+            <div class="field">
+              <label for="email">Business Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="name@company.com" required>
+            </div>
+            <div class="field">
+              <label for="phone">Mobile Number <span class="req">*</span></label>
+              <div class="phone-wrap">
+                <span class="phone-prefix">+91</span>
+                <input type="tel" id="phone" name="phone" placeholder="98765 43210" required>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="city">City / Location <span class="req">*</span></label>
+            <input type="text" id="city" name="city" placeholder="Mumbai, Delhi, Pune..." required>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-header">
+          <div class="section-num">03</div>
+          <span class="section-label">Professional Context</span>
+        </div>
+        <div class="section-body">
+          <div class="grid-2" style="margin-bottom:16px">
+            <div class="field">
+              <label for="experience">Years of Experience <span class="req">*</span></label>
+              <select id="experience" name="experience" required>
+                <option value="" disabled selected>Select range</option>
+                <option>5 – 10 years</option>
+                <option>10 – 15 years</option>
+                <option>15 – 20 years</option>
+                <option>20+ years</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="companySize">Company Size (Headcount)</label>
+              <select id="companySize" name="companySize">
+                <option value="" disabled selected>Select size</option>
+                <option>Less than 50</option>
+                <option>50 – 200</option>
+                <option>200 – 500</option>
+                <option>500 – 2000</option>
+                <option>2000+</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Your Role (select all that apply)</label>
+            <div class="multi-check" style="margin-top:4px">
+              <label class="check-item">
+                <input type="checkbox" name="role" value="CXO / C-Suite">
+                <span>CXO / C-Suite</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="role" value="Director / VP">
+                <span>Director / VP</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="role" value="Founder / Promoter">
+                <span>Founder / Promoter</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="role" value="Senior Manager">
+                <span>Senior Manager</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section-header">
+          <div class="section-num">04</div>
+          <span class="section-label">Summit Interest</span>
+        </div>
+        <div class="section-body">
+          <div class="field" style="margin-bottom:16px">
+            <label>Themes of Interest (select all that apply)</label>
+            <div class="multi-check" style="margin-top:4px">
+              <label class="check-item">
+                <input type="checkbox" name="theme" value="Leadership & Strategy">
+                <span>Leadership & Strategy</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="theme" value="Project Excellence">
+                <span>Project Excellence</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="theme" value="Digital Transformation">
+                <span>Digital Transformation</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="theme" value="Sustainability & ESG">
+                <span>Sustainability & ESG</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="theme" value="Future Technology">
+                <span>Future Technology</span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="theme" value="Safety & Compliance">
+                <span>Safety & Compliance</span>
+              </label>
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:16px">
+            <label for="whyAttend">Why do you want to attend? <span class="req">*</span></label>
+            <textarea id="whyAttend" name="whyAttend"
+              placeholder="Brief context — your goals, what you're looking to gain or contribute at the summit."
+              required></textarea>
+          </div>
+          <div class="field">
+            <label for="heardFrom">How did you hear about CORE Summit?</label>
+            <select id="heardFrom" name="heardFrom">
+              <option value="" disabled selected>Select source</option>
+              <option>LinkedIn</option>
+              <option>Colleague / Peer Referral</option>
+              <option>Industry Association</option>
+              <option>Email / Newsletter</option>
+              <option>Google Search</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 5 — Declaration -->
+        <div class="section-header">
+          <div class="section-num">05</div>
+          <span class="section-label">Declaration</span>
+        </div>
+        <div class="section-body" id="declarationSection">
+          <label class="declaration-box" style="margin-bottom:12px">
+            <input type="checkbox" id="decl1" name="decl1" required>
+            <p>I confirm that I am a senior decision-maker in the construction, real estate, or infrastructure sector
+              and meet the delegate criteria for this invite-only forum.</p>
+          </label>
+          <label class="declaration-box">
+            <input type="checkbox" id="decl2" name="decl2" required>
+            <p>I agree to the <a href="https://buildtek.in" target="_blank">Privacy Policy</a> and consent to Build Tek
+              Events contacting me regarding this application.</p>
+          </label>
+        </div>
+
+        <!-- Submit -->
+        <div class="submit-area">
+          <div class="submit-note">
+            <strong>Applications are reviewed within 48 hours.</strong><br>
+            Only qualified senior decision-makers will receive an invitation.
+          </div>
+          <button type="submit" class="btn-submit">
+            Request My Invitation
+            <span class="btn-arrow">→</span>
+          </button>
+        </div>
+
+        <!-- Success -->
+        <div class="success-state" id="successState">
+          <div class="success-icon">✓</div>
+          <h2>Application Received</h2>
+          <p>Thank you. Our team will review your application and reach out within 48 hours.<br>We look forward to
+            welcoming you to Pune on 11–12 July 2026.</p>
+        </div>
+
+      </div>
+    </form>
+
+    <div class="footer-strip">
+      <p>Build Tek CORE Summit 2026 &nbsp;·&nbsp; 11–12 July, Pune, India</p>
+      <a href="mailto:partners@buildtek.in">partners@buildtek.in</a>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('regForm');
+    const successState = document.getElementById('successState');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let valid = true;
+      const required = form.querySelectorAll('[required]');
+
+      required.forEach(el => {
+        el.style.borderColor = '';
+        if (el.type === 'checkbox') {
+          if (!el.checked) {
+            valid = false;
+            el.closest('.declaration-box').style.borderColor = '#e05c5c';
+          }
+        } else if (!el.value.trim()) {
+          valid = false;
+          el.style.borderColor = '#e05c5c';
+        }
+      });
+
+      if (!valid) {
+        const firstErr = form.querySelector('[style*="e05c5c"]');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      const roles = formData.getAll('role');
+      if (roles.length) data.role = roles.join(', ');
+      
+      const themes = formData.getAll('theme');
+      if (themes.length) data.theme = themes.join(', ');
+
+      data.access_key = "7577a26f-d703-4b4a-acb7-c34e1dddf4db";
+      data.subject = `Delegate Registration: ${data.firstName} ${data.lastName} - ${data.company}`;
+      data.from_name = `${data.firstName} ${data.lastName}`;
+
+      const submitBtn = form.querySelector('.btn-submit');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Submitting...';
+      submitBtn.disabled = true;
+
+      fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+      })
+      .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+              const formCard = document.querySelector('.form-card');
+              const sections = formCard.querySelectorAll('.section-header, .section-body, .submit-area');
+              sections.forEach(s => s.style.display = 'none');
+              successState.style.display = 'block';
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+              console.log(response);
+              throw new Error(json.message || "Failed to submit");
+          }
+      })
+      .catch(error => {
+          console.error(error);
+          alert("There was an error submitting your application. Please try again.");
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+      });
+    });
+
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+      el.addEventListener('input', () => el.style.borderColor = '');
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildTek CORE 2026 – Register Your Interest</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid #2b2b2b;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #e6c66f, #ffdd75);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.sub {
+      text-align: center;
+      color: #c9c9c9;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      font-size: 14px;
+      color: #e3e3e3;
+      letter-spacing: 0.3px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #1b1b1b;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ffdb70;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 28px;
+      padding: 14px;
+      background: linear-gradient(90deg, #d4a534, #f5d77b);
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #0f2e12;
+      border-left: 4px solid #00c851;
+      border-radius: 6px;
+      color: #b6ffce;
+      font-size: 14px;
+      animation: fadeIn 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img src="Logo.jpg" alt="BuildTek Events Logo" style="height: 60px; width: auto; border-radius: 8px; object-fit: contain;">
+    </div>
+    <h1>BuildTek CORE Summit 2026</h1>
+    <p class="sub">Register your interest for India’s premier Construction, Realty & Technology Summit</p>
+
+    <form id="regForm">
+      <label>Full Name</label>
+      <input type="text" name="fullname" required>
+
+      <label>Email Address</label>
+      <input type="email" name="email" required>
+
+      <label>Mobile Number</label>
+      <input type="text" name="phone" required>
+
+      <label>City & Country</label>
+      <input type="text" name="location" required>
+
+      <label>Organization / Company Name</label>
+      <input type="text" name="company" required>
+
+      <label>Designation / Job Title</label>
+      <input type="text" name="designation" required>
+
+      <label>Your Industry Sector</label>
+      <select name="sector" required>
+        <option value="">Select</option>
+        <option>Real Estate Developer</option>
+        <option>Architecture & Design</option>
+        <option>Construction Contractor</option>
+        <option>Facade / Fabrication</option>
+        <option>PEB / Steel / Engineering</option>
+        <option>Cement / Concrete / Materials</option>
+        <option>Paints / Coatings</option>
+        <option>Ceramics / Tiles</option>
+        <option>Building Automation / IoT</option>
+        <option>Machinery / Equipment</option>
+        <option>HVAC / MEP</option>
+        <option>Smart Cities / Tech</option>
+        <option>PropTech / Startup</option>
+        <option>Investor / VC / PE</option>
+        <option>Government / PSU</option>
+        <option>Other</option>
+      </select>
+
+      <label>How would you like to participate?</label>
+      <select name="participation" required>
+        <option value="">Select</option>
+        <option>Attend as Delegate</option>
+        <option>Apply as Speaker</option>
+        <option>Explore Sponsorship Opportunities</option>
+        <option>Exhibit at the Summit</option>
+        <option>Media / Partnership</option>
+        <option>Not sure yet</option>
+      </select>
+
+      <label>Any Questions or Requirements?</label>
+      <textarea name="message" rows="3"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="success-message" id="successMsg">
+      Thank you for registering! Our team will contact you with event updates and opportunities.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('regForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Submitting...';
+
+      const formData = new FormData(form);
+      const payload = {
+        _subject: 'New Registration Interest - BuildTek CORE 2026',
+        _template: 'table',
+        _captcha: 'false',
+        'Full Name': formData.get('fullname'),
+        'Email': formData.get('email'),
+        'Mobile Number': formData.get('phone'),
+        'City & Country': formData.get('location'),
+        'Organization': formData.get('company'),
+        'Designation': formData.get('designation'),
+        'Industry Sector': formData.get('sector'),
+        'Participation Type': formData.get('participation'),
+        'Message': formData.get('message') || 'Not specified'
+      };
+
+      fetch('https://formsubmit.co/ajax/partners@buildtek.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          successMsg.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        console.warn('FormSubmit failed, using mailto fallback:', error);
+        const subject = encodeURIComponent(payload._subject);
+        const body = encodeURIComponent(
+          'Name: ' + payload['Full Name'] + '\n' +
+          'Email: ' + payload['Email'] + '\n' +
+          'Phone: ' + payload['Mobile Number'] + '\n' +
+          'Location: ' + payload['City & Country'] + '\n' +
+          'Company: ' + payload['Organization'] + '\n' +
+          'Designation: ' + payload['Designation'] + '\n' +
+          'Sector: ' + payload['Industry Sector'] + '\n' +
+          'Participation: ' + payload['Participation Type'] + '\n' +
+          'Message: ' + payload['Message']
+        );
+        window.open('mailto:partners@buildtek.in?subject=' + subject + '&body=' + body, '_blank');
+      })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    });
+  </script>
+
+</body>
+</html>

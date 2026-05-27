@@ -1,0 +1,3245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildTek Events | Premier Corporate Summits — India & Dubai</title>
+  <meta name="description"
+    content="BuildTek Events — India's most vibrant corporate summit organiser. CORE Summit Pune, PharmaVista Goa, Dubai Realty Forum 2026." />
+  <meta property="og:title" content="BuildTek Events | Premier Corporate Summits" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80" />
+  <meta name="robots" content="index, follow" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJL88YELRT"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-HJL88YELRT');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+   ROOT VARIABLES
+============================================= */
+    :root {
+      --ink: #050409;
+      --ink2: #0d0b1a;
+      --white: #FFFFFF;
+      --off: #F8F6F2;
+      --muted: #8F8C99;
+
+      /* Refined gold and metallic palette */
+      --violet: #D4AF37;
+      --violet-light: #F3E5AB;
+      --electric: #D1D5DB;
+      /* Platinum */
+      --coral: #A36B40;
+      /* Bronze */
+      --amber: #D4AF37;
+      /* Champagne Gold */
+      --emerald: #0A5C46;
+      /* Deep Emerald */
+      --pink: #9A2C4D;
+      /* Deep Ruby */
+
+      /* Gradients */
+      --grad-hero: linear-gradient(135deg, #050409 0%, #0f0a26 50%, #050409 100%);
+      --grad-violet: linear-gradient(135deg, #D4AF37, #F3E5AB);
+      /* Premium Gold Grad */
+      --grad-coral: linear-gradient(135deg, #A36B40, #D4AF37);
+      /* Bronze-Gold Grad */
+      --grad-teal: linear-gradient(135deg, #0A5C46, #D1D5DB);
+      --grad-amber: linear-gradient(135deg, #D4AF37, #A36B40);
+      --grad-pink: linear-gradient(135deg, #9A2C4D, #D4AF37);
+
+      --font-display: 'Playfair Display', serif;
+      --font-serif: 'DM Serif Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --radius: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--ink);
+      color: var(--white);
+      overflow-x: hidden;
+      cursor: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* =============================================
+   CUSTOM CURSOR
+============================================= */
+    #cur-dot,
+    #cur-ring {
+      display: none !important;
+    }
+
+    /* =============================================
+   HEADER
+============================================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      transition: all .4s;
+    }
+
+    header.stuck {
+      background: rgba(9, 8, 21, 0.95);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .nav-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 3px;
+      background: var(--grad-violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-family: var(--font-body);
+      font-size: .55rem;
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .7);
+      transition: color .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--electric);
+    }
+
+    .nav-cta {
+      background: var(--grad-violet);
+      color: #fff !important;
+      padding: .6rem 1.6rem;
+      border-radius: var(--radius-pill);
+      font-size: .68rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      transition: opacity .3s;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    }
+
+    .nav-cta:hover {
+      opacity: .85;
+    }
+
+    .mob-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* =============================================
+   HERO (Full‑screen video bg)
+============================================= */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: var(--grad-hero);
+    }
+
+    /* Animated gradient orbs behind text */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      opacity: .55;
+    }
+
+    .orb1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.35) 0%, transparent 70%);
+      top: -100px;
+      left: -150px;
+      animation: orbFloat 12s ease-in-out infinite;
+    }
+
+    .orb2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+      bottom: -100px;
+      right: -100px;
+      animation: orbFloat 10s ease-in-out infinite reverse;
+    }
+
+    .orb3 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+      top: 30%;
+      left: 40%;
+      animation: orbFloat 14s ease-in-out infinite 2s;
+    }
+
+    /* Hero image strip (real Unsplash photos) */
+    .hero-img-strip {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      opacity: .18;
+    }
+
+    .hero-img-strip div {
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-pill);
+      padding: .45rem 1.2rem;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp .8s .2s forwards;
+    }
+
+    .hero-badge span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--electric);
+      animation: blink 1.4s infinite;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0;
+      animation: fadeUp 1s .4s forwards;
+    }
+
+    .hero h1 .color-violet {
+      color: var(--violet-light);
+    }
+
+    .hero h1 .color-coral {
+      color: var(--coral);
+    }
+
+    .hero h1 .color-electric {
+      color: var(--electric);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .65);
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeUp .8s .7s forwards;
+    }
+
+    .hero-btns {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .8s .9s forwards;
+    }
+
+    .btn-vivid {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: 1rem 2.2rem;
+      border-radius: var(--radius-pill);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all .3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-vivid.violet {
+      background: var(--grad-violet);
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-vivid.violet:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(212, 175, 55, 0.5);
+    }
+
+    .btn-vivid.outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, .3);
+    }
+
+    .btn-vivid.outline:hover {
+      border-color: var(--electric);
+      color: var(--electric);
+    }
+
+    .btn-vivid.coral {
+      background: var(--grad-coral);
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(255, 77, 109, .45);
+    }
+
+    .btn-vivid.coral:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-vivid.teal {
+      background: var(--grad-teal);
+      color: var(--ink);
+      box-shadow: 0 8px 32px rgba(0, 200, 150, .4);
+    }
+
+    .btn-vivid.teal:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-vivid.amber {
+      background: var(--grad-amber);
+      color: var(--ink);
+      box-shadow: 0 8px 32px rgba(255, 182, 39, .45);
+    }
+
+    .btn-vivid.amber:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-scroll-ind {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      z-index: 3;
+      opacity: 0;
+      animation: fadeIn 1s 1.4s forwards;
+    }
+
+    .hero-scroll-ind span {
+      font-size: .55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .scroll-pulse {
+      width: 28px;
+      height: 44px;
+      border: 1.5px solid rgba(255, 255, 255, .2);
+      border-radius: 14px;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+
+    .scroll-pulse::before {
+      content: '';
+      width: 4px;
+      height: 10px;
+      background: var(--electric);
+      border-radius: 2px;
+      animation: scrollBob 2s infinite;
+    }
+
+    /* =============================================
+   MARQUEE TICKER
+============================================= */
+    .ticker {
+      padding: 1rem 0;
+      background: linear-gradient(90deg, var(--violet), #a855f7, var(--coral), var(--electric), var(--emerald), var(--amber), var(--violet));
+      background-size: 400% 100%;
+      animation: gradShift 8s linear infinite;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 3rem;
+      animation: tickerRoll 25s linear infinite;
+    }
+
+    .ticker-track span {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #fff;
+      opacity: .9;
+    }
+
+    .ticker-track .dot {
+      color: rgba(255, 255, 255, .4);
+      font-size: .6rem;
+    }
+
+    /* =============================================
+   SECTION COMMON
+============================================= */
+    .section-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius-pill);
+      padding: .35rem 1rem;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--violet-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .section-heading .accent-violet {
+      color: var(--violet-light);
+    }
+
+    .section-heading .accent-coral {
+      color: var(--coral);
+    }
+
+    .section-heading .accent-electric {
+      color: var(--electric);
+    }
+
+    .section-heading .accent-amber {
+      color: var(--amber);
+    }
+
+    .section-heading .accent-teal {
+      color: var(--emerald);
+    }
+
+    /* reveal */
+    .rv {
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity .85s ease, transform .85s ease;
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rv.d1 {
+      transition-delay: .1s;
+    }
+
+    .rv.d2 {
+      transition-delay: .2s;
+    }
+
+    .rv.d3 {
+      transition-delay: .3s;
+    }
+
+    .rv.d4 {
+      transition-delay: .4s;
+    }
+
+    .rv.d5 {
+      transition-delay: .5s;
+    }
+
+    /* =============================================
+   ABOUT SECTION
+============================================= */
+    .about-sec {
+      padding: 8rem 0;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-img-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 12px;
+    }
+
+    .mosaic-cell {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mosaic-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .mosaic-cell:hover img {
+      transform: scale(1.08);
+    }
+
+    .mosaic-cell.tall {
+      grid-row: span 2;
+    }
+
+    .mosaic-cell .cell-tag {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(10, 10, 15, .7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--radius-pill);
+      padding: .3rem .9rem;
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-stats-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .astat .num {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      line-height: 1;
+      background: var(--grad-violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .astat .lbl {
+      font-size: .65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .2rem;
+    }
+
+    /* =============================================
+   EVENTS / SUMMITS SECTION
+============================================= */
+    .events-sec {
+      padding: 6rem 0 8rem;
+    }
+
+    .events-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* Event Card */
+    .ev-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      background: var(--ink2);
+      border: 1px solid rgba(255, 255, 255, .06);
+      transition: transform .4s ease, box-shadow .4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ev-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .ev-img {
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ev-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+      filter: saturate(1.2);
+    }
+
+    .ev-card:hover .ev-img img {
+      transform: scale(1.08);
+    }
+
+    .ev-img-overlay {
+      position: absolute;
+      inset: 0;
+    }
+
+    .ev-num {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: rgba(255, 255, 255, .08);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .ev-tag {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      border-radius: var(--radius-pill);
+      padding: .3rem .9rem;
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .ev-tag.flagship {
+      background: linear-gradient(90deg, #FFB627, #FF6B35);
+    }
+
+    .ev-tag.new {
+      background: var(--grad-violet);
+    }
+
+    .ev-tag.intl {
+      background: var(--grad-coral);
+    }
+
+    .ev-body {
+      padding: 2rem 2rem 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ev-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      line-height: 1.0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .ev-desc {
+      font-size: .83rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.7;
+    }
+
+    .ev-meta {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .ev-meta-row {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .ev-meta-row i {
+      width: 16px;
+      font-size: .75rem;
+    }
+
+    .ev-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .chip {
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: .28rem .75rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .55);
+      transition: all .3s;
+    }
+
+    .ev-card:hover .chip {
+      border-color: rgba(255, 255, 255, .25);
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .ev-footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ev-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: gap .3s;
+    }
+
+    .ev-cta i {
+      font-size: .65rem;
+      transition: transform .3s;
+    }
+
+    .ev-card:hover .ev-cta i {
+      transform: translateX(5px);
+    }
+
+    .ev-date-badge {
+      font-family: var(--font-display);
+      font-size: .9rem;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    /* Card accent borders */
+    .ev-card.c-violet {
+      border-top: 3px solid var(--violet-light);
+    }
+
+    .ev-card.c-violet .ev-cta {
+      color: var(--violet-light);
+    }
+
+    .ev-card.c-coral {
+      border-top: 3px solid var(--coral);
+    }
+
+    .ev-card.c-coral .ev-cta {
+      color: var(--coral);
+    }
+
+    .ev-card.c-teal {
+      border-top: 3px solid var(--emerald);
+    }
+
+    .ev-card.c-teal .ev-cta {
+      color: var(--emerald);
+    }
+
+    .ev-card.c-amber {
+      border-top: 3px solid var(--amber);
+    }
+
+    .ev-card.c-amber .ev-cta {
+      color: var(--amber);
+    }
+
+    /* =============================================
+   VIDEO SHOWCASE
+============================================= */
+    .video-sec {
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--ink) 0%, #0a081c 50%, var(--ink) 100%);
+    }
+
+    .video-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(212, 175, 55, 0.15) 0%, rgba(124, 58, 237, 0.1) 50%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .video-text p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.9;
+      margin-top: 1.5rem;
+    }
+
+    .splash-frame {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      position: relative;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow: 0 0 80px rgba(212, 175, 55, 0.15);
+    }
+
+    .splash-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .splash-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 10s ease;
+      animation: slowZoom 20s infinite alternate;
+    }
+
+    .splash-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 10, 15, 0.85) 0%, rgba(212, 175, 55, 0.1) 50%, transparent 100%);
+      transition: background 0.5s ease;
+    }
+
+    .splash-content {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      right: 2rem;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .splash-badge {
+      background: rgba(255, 255, 255, .1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: var(--electric);
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: .4rem 1rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .splash-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+    }
+
+    .splash-sub {
+      font-size: .8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, .8);
+      letter-spacing: 1px;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, .5);
+    }
+
+    .splash-container:hover .splash-img {
+      transform: scale(1.08);
+    }
+
+    .splash-container:hover .splash-overlay {
+      background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, rgba(212, 175, 55, 0.15) 50%, rgba(10, 10, 15, 0.2) 100%);
+    }
+
+    @keyframes slowZoom {
+      0% {
+        transform: scale(1.0);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    @media(max-width:768px) {
+      .splash-frame {
+        aspect-ratio: 4/3;
+      }
+
+      .splash-content {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+
+    /* =============================================
+   INDUSTRIES
+============================================= */
+    .ind-sec {
+      padding: 8rem 0;
+    }
+
+    .ind-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .ind-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      height: 280px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, .06);
+      transition: transform .4s, box-shadow .4s;
+    }
+
+    .ind-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .ind-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+      filter: brightness(.6) saturate(1.4);
+    }
+
+    .ind-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(.5) saturate(1.6);
+    }
+
+    .ind-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+      background: linear-gradient(0deg, rgba(10, 10, 15, .9) 0%, transparent 60%);
+      transition: background .4s;
+    }
+
+    .ind-card:hover .ind-overlay {
+      background: linear-gradient(0deg, rgba(10, 10, 15, .95) 0%, rgba(10, 10, 15, .3) 100%);
+    }
+
+    .ind-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      transition: transform .3s;
+    }
+
+    .ind-card:hover .ind-icon {
+      transform: scale(1.1);
+    }
+
+    .ind-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .ind-card p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+      margin-top: .3rem;
+      line-height: 1.6;
+    }
+
+    /* =============================================
+   STATS RIBBON
+============================================= */
+    .stats-ribbon {
+      padding: 4rem 0;
+      background: linear-gradient(90deg, #050409 0%, #0d0b1a 50%, #050409 100%);
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+
+    .stat-col {
+      padding: 2rem;
+      border-right: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .stat-col:last-child {
+      border-right: none;
+    }
+
+    .stat-icon {
+      font-size: 1.5rem;
+      margin-bottom: .8rem;
+    }
+
+    .stat-big {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+      color: #fff;
+    }
+
+    .stat-lbl {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .5rem;
+    }
+
+    /* =============================================
+   WHY BUILDTEK
+============================================= */
+    .why-sec {
+      padding: 8rem 0;
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .why-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 560px;
+      position: relative;
+    }
+
+    .why-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .why-img-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      background: rgba(10, 10, 15, .8);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+    }
+
+    .why-img-badge .num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--violet-light);
+      line-height: 1;
+    }
+
+    .why-img-badge .lbl {
+      font-size: .65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .why-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .why-row {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      transition: background .3s;
+    }
+
+    .why-row:last-child {
+      border-bottom: none;
+    }
+
+    .why-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .why-row h4 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: .4rem;
+    }
+
+    .why-row p {
+      font-size: .83rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.8;
+    }
+
+    /* =============================================
+   TESTIMONIALS
+============================================= */
+    .testi-sec {
+      padding: 8rem 0;
+      background: linear-gradient(180deg, var(--ink) 0%, #0a081c 100%);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .testi-card {
+      background: var(--ink2);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      transition: transform .4s, border-color .4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testi-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .testi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      opacity: 0;
+      transition: opacity .4s;
+    }
+
+    .testi-card:hover::before {
+      opacity: 1;
+    }
+
+    .testi-card.c1::before {
+      background: var(--grad-violet);
+    }
+
+    .testi-card.c2::before {
+      background: var(--grad-coral);
+    }
+
+    .testi-card.c3::before {
+      background: var(--grad-teal);
+    }
+
+    .testi-quote {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .testi-text {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: .8rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .5px;
+    }
+
+    .testi-role {
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    /* =============================================
+   CONTACT
+============================================= */
+    .contact-sec {
+      padding: 8rem 0;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .contact-left {
+      padding: 4rem;
+      background: linear-gradient(135deg, #0d0b1a 0%, #050409 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-left::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%);
+    }
+
+    .contact-left h3 {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      line-height: .95;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-left h3 span {
+      color: var(--violet-light);
+    }
+
+    .contact-left p {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-detail-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cd-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .cd-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      color: var(--violet-light);
+      margin-top: 2px;
+    }
+
+    .contact-right {
+      padding: 4rem;
+      background: var(--ink2);
+    }
+
+    .fl {
+      margin-bottom: 1.5rem;
+    }
+
+    .fl label {
+      display: block;
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .6rem;
+    }
+
+    .fl input,
+    .fl select,
+    .fl textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 10px;
+      padding: .9rem 1rem;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .3s;
+      -webkit-appearance: none;
+    }
+
+    .fl input:focus,
+    .fl select,
+    .fl textarea:focus {
+      border-color: var(--violet-light);
+    }
+
+    .fl input::placeholder,
+    .fl textarea::placeholder {
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .fl select option {
+      background: #1a1a2e;
+    }
+
+    textarea.fl-ta {
+      resize: none;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1.1rem;
+      background: var(--grad-violet);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .3s, transform .3s;
+      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+    }
+
+    .submit-btn:hover {
+      opacity: .88;
+      transform: translateY(-2px);
+    }
+
+    .form-ok {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(0, 200, 150, .1);
+      border: 1px solid rgba(0, 200, 150, .3);
+      border-radius: 10px;
+      font-size: .82rem;
+      color: var(--emerald);
+      text-align: center;
+    }
+
+    /* =============================================
+   FOOTER
+============================================= */
+    footer {
+      background: #050409;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      padding: 5rem 0 2rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-brand-text {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      background: var(--grad-violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 280px;
+      margin-bottom: 1.5rem;
+    }
+
+    .soc-row {
+      display: flex;
+      gap: .7rem;
+    }
+
+    .soc-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: .85rem;
+      transition: all .3s;
+    }
+
+    .soc-btn:hover {
+      background: var(--grad-violet);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .footer-col h5 {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--violet-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .footer-col ul li a {
+      font-size: .82rem;
+      color: var(--muted);
+      transition: color .3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .04);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .3);
+    }
+
+    .footer-cities {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .city-pill {
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: .3rem .8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, .1);
+      color: rgba(255, 255, 255, .4);
+    }
+
+    /* =============================================
+   KEYFRAMES
+============================================= */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(30px, -40px);
+      }
+    }
+
+    @keyframes gradShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 400% 50%;
+      }
+    }
+
+    @keyframes tickerRoll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes scrollBob {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(12px);
+        opacity: .3;
+      }
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .3;
+      }
+    }
+
+    /* =============================================
+   RESPONSIVE
+============================================= */
+    @media(max-width:1100px) {
+
+      .events-grid,
+      .testi-grid,
+      .ind-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-layout,
+      .why-layout,
+      .contact-layout,
+      .video-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-col:nth-child(2) {
+        border-right: none;
+      }
+
+      .contact-left::before {
+        display: none;
+      }
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: rgba(7, 7, 16, .98);
+        z-index: 999;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mob-btn {
+        display: block;
+        z-index: 1000;
+        position: relative;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 12vw, 5rem);
+      }
+
+      .events-grid,
+      .testi-grid,
+      .ind-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img-mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 180px;
+      }
+
+      .mosaic-cell.tall {
+        grid-row: span 1;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .events-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      body {
+        cursor: auto;
+      }
+
+      #cur-dot,
+      #cur-ring {
+        display: none;
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero-btns {
+        flex-direction: column;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-left,
+      .contact-right {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    /* =============================================
+    VETTING PROCESS SECTION
+============================================= */
+    .vetting-sec {
+      padding: 6rem 0 4rem;
+      background: var(--ink);
+    }
+
+    .vetting-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+
+    .vetting-step {
+      background: var(--ink2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      position: relative;
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .vetting-step:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.25);
+      box-shadow: 0 10px 30px rgba(9, 8, 21, 0.5);
+    }
+
+    .vetting-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 800;
+      color: rgba(212, 175, 55, 0.1);
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .vetting-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(212, 175, 55, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--violet-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .vetting-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+
+    .vetting-step p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+    }
+
+    @media(max-width:900px) {
+      .vetting-timeline {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* =============================================
+    HOLOGRAPHIC VIP PASS CARD
+============================================= */
+    .contact-left-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+
+    .pass-card-container {
+      width: 100%;
+      max-width: 380px;
+      height: 230px;
+      margin: 1.5rem 0 0;
+      position: relative;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    .pass-card {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0d0b1a 0%, #050409 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.08);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+    }
+
+    .pass-shine {
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 10;
+      mix-blend-mode: color-dodge;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .pass-card-container:hover .pass-shine {
+      opacity: 1;
+    }
+
+    .pass-hologram {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(125deg,
+          rgba(255, 0, 128, 0.05) 0%,
+          rgba(0, 255, 255, 0.05) 30%,
+          rgba(255, 255, 0, 0.05) 60%,
+          rgba(0, 255, 0, 0.05) 80%,
+          rgba(255, 0, 128, 0.05) 100%);
+      background-size: 200% 200%;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: 9;
+      opacity: 0.5;
+    }
+
+    .pass-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      transform: translateZ(30px);
+    }
+
+    .pass-badge {
+      font-size: 0.55rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--violet-light);
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .pass-chip {
+      width: 32px;
+      height: 24px;
+      background: linear-gradient(135deg, #D4AF37, #F3E5AB);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.4);
+    }
+
+    .pass-chip::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1.5px solid rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+    }
+
+    .pass-body {
+      margin-top: 1.2rem;
+      transform: translateZ(40px);
+    }
+
+    .pass-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      line-height: 1.1;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pass-company {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .pass-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 1.2rem;
+      transform: translateZ(30px);
+    }
+
+    .pass-summit {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    .pass-status {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: rgba(212, 175, 55, 0.85);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .pass-status span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.85);
+      animation: blink 1.4s infinite;
+    }
+
+    .pass-watermark {
+      position: absolute;
+      bottom: -15px;
+      right: -10px;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.015);
+      pointer-events: none;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cursor -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header id="hdr">
+    <div class="nav-wrap">
+      <a href="#" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <img src="Logo.jpg" alt="BuildTek Events Logo" style="height: 45px; width: auto; border-radius: 6px; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+          <span class="logo-text" style="font-size: 1.8rem; line-height: 1.1;">BuildTek</span>
+          <span class="logo-sub" style="margin-top: 2px;">Events</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#events">Summits</a>
+        <a href="Build Tek Events Website/speakers.html">Speakers</a>
+        <a href="Build Tek Events Website/insights.html">Insights</a>
+        <a href="Build Tek Events Website/partnerships.html">Partnerships</a>
+        <a href="#contact" class="nav-cta btn-vivid">Partner With Us</a>
+      </nav>
+      <button class="mob-btn" id="mobBtn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-video-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <!-- Real photo strip behind text -->
+      <div class="hero-img-strip">
+        <div
+          style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop')">
+        </div>
+        <div
+          style="background-image:url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&q=80&fit=crop')">
+        </div>
+        <div
+          style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&fit=crop')">
+        </div>
+        <div
+          style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&fit=crop')">
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span></span>
+        Steering the Future of India's Core Industries · Est. 2023
+      </div>
+      <h1>
+        Co-Writing the <span class="color-violet">Next Chapter</span><br>
+        of Indian <span class="color-coral">Enterprise</span>
+      </h1>
+      <p class="hero-sub">The private, invite-only assembly of C-Suite leaders, policymakers, and innovators shaping
+        India's built and corporate landscapes — Pune · Goa · Dubai</p>
+      <div class="hero-btns">
+        <a href="#events" class="btn-vivid violet"><i class="fas fa-calendar-star"></i> Explore Summits</a>
+        <a href="#contact" class="btn-vivid coral"><i class="fas fa-user-plus"></i> Request Invitation</a>
+        <a href="#contact" class="btn-vivid outline">Partner With Us</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-ind">
+      <div class="scroll-pulse"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker">
+    <div class="ticker-track" id="ticker">
+      <span>CORE Summit 2026</span><span class="dot">✦</span>
+      <span>PharmaVista Goa 2026</span><span class="dot">✦</span>
+      <span>Dubai Realty Forum</span><span class="dot">✦</span>
+      <span>500+ Delegates</span><span class="dot">✦</span>
+      <span>40+ World-Class Speakers</span><span class="dot">✦</span>
+      <span>Invite-Only Access</span><span class="dot">✦</span>
+      <span>India · UAE</span><span class="dot">✦</span>
+      <span>CORE Summit 2026</span><span class="dot">✦</span>
+      <span>PharmaVista Goa 2026</span><span class="dot">✦</span>
+      <span>Dubai Realty Forum</span><span class="dot">✦</span>
+      <span>500+ Delegates</span><span class="dot">✦</span>
+      <span>40+ World-Class Speakers</span><span class="dot">✦</span>
+      <span>Invite-Only Access</span><span class="dot">✦</span>
+      <span>India · UAE</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===== CORPORATE PRESENCE MARQUEE ===== -->
+  <section class="presence-sec rv"
+    style="padding: 4rem 0 2rem; background: var(--ink2); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="section-wrap" style="text-align: center;">
+      <p
+        style="font-size: 0.65rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--violet-light); margin-bottom: 2rem;">
+        Ecosystem Organizations Represented At Our Conclaves</p>
+      <div
+        style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2.5rem; opacity: 0.65;">
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">LODHA</span>
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">MAHINDRA</span>
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">SHAPOORJI</span>
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">L&amp;T</span>
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">GODREJ</span>
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">TATA
+          PROJECTS</span>
+        <span
+          style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); letter-spacing: 2px;">OBEROI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about-sec">
+    <div class="section-wrap">
+      <div class="about-layout">
+        <!-- Photo Mosaic -->
+        <div class="about-img-mosaic rv">
+          <div class="mosaic-cell tall rv d1">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85&fit=crop"
+              alt="Business Summit" loading="lazy" />
+            <div class="cell-tag">Summits</div>
+          </div>
+          <div class="mosaic-cell rv d2">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&fit=crop" alt="Real Estate"
+              loading="lazy" />
+            <div class="cell-tag">Real Estate</div>
+          </div>
+          <div class="mosaic-cell rv d3">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&fit=crop" alt="Healthcare"
+              loading="lazy" />
+            <div class="cell-tag">Healthcare</div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="about-text rv d2">
+          <div class="pill-label"><i class="fas fa-star"></i> Our Mission</div>
+          <h2 class="section-heading">Convening the <span class="accent-violet">Visionaries</span> Shaping the <span
+              class="accent-coral">Ecosystem</span></h2>
+          <p style="margin-top:1.5rem">BuildTek is India's leading corporate innovation and leadership network,
+            convening high-impact strategic forums for Construction, Real Estate, Infrastructure, Pharma, and
+            Manufacturing sectors.</p>
+          <p>Every assembly is governed by an expert Advisory Board to ensure unmatched peer-level alignment. 500+
+            C-Suite leaders, institutional investors, and policymakers convene under one roof to build strategic
+            partnerships, allocate capital, and address regulatory playbooks.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS / SUMMITS ===== -->
+  <section id="events" class="events-sec">
+    <div class="section-wrap">
+      <div class="events-header rv">
+        <div>
+          <div class="pill-label"><i class="fas fa-calendar-alt"></i> Upcoming Conclaves</div>
+          <h2 class="section-heading">Three <span class="accent-violet">Strategic</span><br><span
+              class="accent-coral">Assemblies</span> This Year</h2>
+        </div>
+        <a href="#contact" class="btn-vivid violet">Apply for Invitation <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="events-grid">
+
+        <!-- CORE SUMMIT -->
+        <div class="ev-card c-amber rv d1">
+          <div class="ev-img">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85&fit=crop"
+              alt="Construction Summit" loading="lazy" />
+            <div class="ev-img-overlay"
+              style="background:linear-gradient(0deg,rgba(10,10,15,.85) 0%,rgba(255,182,39,.1) 100%)"></div>
+            <div class="ev-num">01</div>
+            <span class="ev-tag flagship">⭐ flagship</span>
+          </div>
+          <div class="ev-body">
+            <h3>BuildTek CORE Summit 2026</h3>
+            <p class="ev-desc">India's invite-only leadership forum for Construction, Real Estate & Infrastructure
+              decision-makers shaping the built environment.</p>
+            <div class="ev-meta">
+              <div class="ev-meta-row"><i class="fas fa-map-marker-alt" style="color:var(--amber)"></i> Pune,
+                Maharashtra</div>
+              <div class="ev-meta-row"><i class="far fa-calendar-alt" style="color:var(--amber)"></i> July 11–12, 2026
+              </div>
+              <div class="ev-meta-row"><i class="fas fa-users" style="color:var(--amber)"></i> 500+ Vetted Delegates ·
+                40+ Speakers</div>
+            </div>
+            <div class="ev-chips">
+              <span class="chip">Capital Evolution</span>
+              <span class="chip">ConTech & AI</span>
+              <span class="chip">ESG Compliance</span>
+              <span class="chip">Smart Infrastructure</span>
+            </div>
+          </div>
+          <div class="ev-footer">
+            <a href="core-summit-2026.html" class="ev-cta" style="color:var(--amber)">Explore CORE 2026 <i
+                class="fas fa-arrow-right"></i></a>
+            <span class="ev-date-badge">JUL '26</span>
+          </div>
+        </div>
+
+        <!-- PHARMAVISTA GOA -->
+        <div class="ev-card c-teal rv d2">
+          <div class="ev-img">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=85&fit=crop"
+              alt="Pharma Summit Goa" loading="lazy" />
+            <div class="ev-img-overlay"
+              style="background:linear-gradient(0deg,rgba(10,10,15,.85) 0%,rgba(0,200,150,.1) 100%)"></div>
+            <div class="ev-num">02</div>
+            <span class="ev-tag new">🆕 New Conclave</span>
+          </div>
+          <div class="ev-body">
+            <h3>PharmaVista Summit 2026</h3>
+            <p class="ev-desc">South Asia's premier pharma leadership forum — drug manufacturers, biotech pioneers,
+              regulators & investors in sun-kissed Goa.</p>
+            <div class="ev-meta">
+              <div class="ev-meta-row"><i class="fas fa-map-marker-alt" style="color:var(--emerald)"></i> Goa, India
+              </div>
+              <div class="ev-meta-row"><i class="far fa-calendar-alt" style="color:var(--emerald)"></i> November 2026
+              </div>
+              <div class="ev-meta-row"><i class="fas fa-users" style="color:var(--emerald)"></i> 400+ Senior Leaders ·
+                30+ Experts</div>
+            </div>
+            <div class="ev-chips">
+              <span class="chip">Drug Innovation</span>
+              <span class="chip">Regulatory Affairs</span>
+              <span class="chip">Biotech & R&D</span>
+              <span class="chip">Investment</span>
+            </div>
+          </div>
+          <div class="ev-footer">
+            <a href="#contact" class="ev-cta" style="color:var(--emerald)">Apply for Invitation <i
+                class="fas fa-arrow-right"></i></a>
+            <span class="ev-date-badge">NOV '26</span>
+          </div>
+        </div>
+
+        <!-- DUBAI REALTY -->
+        <div class="ev-card c-coral rv d3">
+          <div class="ev-img">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=85&fit=crop"
+              alt="Dubai Realty Forum" loading="lazy" />
+            <div class="ev-img-overlay"
+              style="background:linear-gradient(0deg,rgba(10,10,15,.85) 0%,rgba(255,77,109,.1) 100%)"></div>
+            <div class="ev-num">03</div>
+            <span class="ev-tag intl">🌍 International</span>
+          </div>
+          <div class="ev-body">
+            <h3>Dubai Realty & Build Forum</h3>
+            <p class="ev-desc">The Middle East's landmark Real Estate & Construction summit — global developers,
+              investors, architects & PropTech disruptors at the crossroads of the world.</p>
+            <div class="ev-meta">
+              <div class="ev-meta-row"><i class="fas fa-map-marker-alt" style="color:var(--coral)"></i> Dubai, UAE</div>
+              <div class="ev-meta-row"><i class="far fa-calendar-alt" style="color:var(--coral)"></i> November 2026
+              </div>
+              <div class="ev-meta-row"><i class="fas fa-users" style="color:var(--coral)"></i> 600+ Global Delegates ·
+                50+ Speakers</div>
+            </div>
+            <div class="ev-chips">
+              <span class="chip">Luxury Residential</span>
+              <span class="chip">PropTech</span>
+              <span class="chip">MENA Investment</span>
+              <span class="chip">Smart Cities</span>
+            </div>
+          </div>
+          <div class="ev-footer">
+            <a href="#contact" class="ev-cta" style="color:var(--coral)">Apply for Invitation <i
+                class="fas fa-arrow-right"></i></a>
+            <span class="ev-date-badge">NOV '26</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIDEO SHOWCASE ===== -->
+  <section class="video-sec">
+    <div class="video-glow"></div>
+    <div class="section-wrap">
+      <div class="video-layout">
+        <div class="video-text rv">
+          <div class="pill-label"><i class="fas fa-images"></i> Visual Showcase</div>
+          <h2 class="section-heading">The <span class="accent-violet">BuildTek</span><br>Experience</h2>
+          <p>From the opening keynote to curated networking dinners — our summits are designed for one outcome: real
+            business connections that last years beyond the event.</p>
+          <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+            <div
+              style="text-align:center;padding:1rem 1.5rem;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.2);border-radius:var(--radius);">
+              <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--violet-light);line-height:1;">40+
+              </div>
+              <div
+                style="font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.3rem;">
+                Expert Speakers</div>
+            </div>
+            <div
+              style="text-align:center;padding:1rem 1.5rem;background:rgba(255,77,109,.1);border:1px solid rgba(255,77,109,.2);border-radius:var(--radius);">
+              <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--coral);line-height:1;">12</div>
+              <div
+                style="font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.3rem;">
+                Closed Rooms</div>
+            </div>
+            <div
+              style="text-align:center;padding:1rem 1.5rem;background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.2);border-radius:var(--radius);">
+              <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--emerald);line-height:1;">2</div>
+              <div
+                style="font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.3rem;">
+                Intensive Days</div>
+            </div>
+          </div>
+        </div>
+        <div class="splash-frame rv d2">
+          <div class="splash-container">
+            <img class="splash-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80"
+              alt="BuildTek Summit Showcase" />
+            <div class="splash-overlay"></div>
+            <div class="splash-content">
+              <span class="splash-badge"><i class="fas fa-crown"></i> Elite Networking</span>
+              <h4 class="splash-title">Connecting the Leaders of Tomorrow</h4>
+              <p class="splash-sub">Pune · Goa · Dubai 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRIES ===== -->
+  <section id="industries" class="ind-sec">
+    <div class="section-wrap">
+      <div class="rv">
+        <div class="pill-label"><i class="fas fa-th"></i> Our Sectors</div>
+        <h2 class="section-heading">Six <span class="accent-coral">Sectors</span>,<br>One <span
+            class="accent-electric">Platform</span></h2>
+      </div>
+      <div class="ind-grid">
+
+        <div class="ind-card rv d1">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80&fit=crop" alt="Construction"
+            loading="lazy" />
+          <div class="ind-overlay">
+            <div class="ind-icon" style="background:rgba(255,182,39,.2);"><i class="fas fa-hard-hat"
+                style="color:var(--amber)"></i></div>
+            <h4>Construction & Realty</h4>
+            <p>Leadership conclaves · PropTech Expos · Infrastructure Investment</p>
+          </div>
+        </div>
+
+        <div class="ind-card rv d2">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80&fit=crop" alt="Pharma"
+            loading="lazy" />
+          <div class="ind-overlay">
+            <div class="ind-icon" style="background:rgba(0,200,150,.2);"><i class="fas fa-flask"
+                style="color:var(--emerald)"></i></div>
+            <h4>Pharma & Healthcare</h4>
+            <p>Drug Innovation · Regulatory Forums · HealthTech Conferences</p>
+          </div>
+        </div>
+
+        <div class="ind-card rv d3">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80&fit=crop"
+            alt="Real Estate Dubai" loading="lazy" />
+          <div class="ind-overlay">
+            <div class="ind-icon" style="background:rgba(255,77,109,.2);"><i class="fas fa-city"
+                style="color:var(--coral)"></i></div>
+            <h4>Real Estate & Investment</h4>
+            <p>Luxury Residential · MENA Markets · Smart City Development</p>
+          </div>
+        </div>
+
+        <div class="ind-card rv d1">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80&fit=crop" alt="Technology"
+            loading="lazy" />
+          <div class="ind-overlay">
+            <div class="ind-icon" style="background:rgba(0,212,255,.2);"><i class="fas fa-microchip"
+                style="color:var(--electric)"></i></div>
+            <h4>Technology & AI</h4>
+            <p>AI & Cloud Summits · Cybersecurity · Developer Festivals</p>
+          </div>
+        </div>
+
+        <div class="ind-card rv d2">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80&fit=crop" alt="Fintech"
+            loading="lazy" />
+          <div class="ind-overlay">
+            <div class="ind-icon" style="background:rgba(212,175,55,.15);"><i class="fas fa-coins"
+                style="color:var(--violet-light)"></i></div>
+            <h4>Fintech & BFSI</h4>
+            <p>Fintech Forums · Digital Payments · Banking Tech Summits</p>
+          </div>
+        </div>
+
+        <div class="ind-card rv d3">
+          <img src="https://images.unsplash.com/photo-1536746803623-cef87080bfc8?w=700&q=80&fit=crop"
+            alt="Manufacturing" loading="lazy" />
+          <div class="ind-overlay">
+            <div class="ind-icon" style="background:rgba(255,182,39,.2);"><i class="fas fa-industry"
+                style="color:var(--amber)"></i></div>
+            <h4>Manufacturing & Steel</h4>
+            <p>Industrial Automation · Steel & Metals · Supply Chain</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== WHY BUILDTEK ===== -->
+  <section id="why" class="why-sec">
+    <div class="section-wrap">
+      <div class="why-layout">
+        <div class="why-img rv">
+          <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=900&q=85&fit=crop" alt="Why BuildTek"
+            loading="lazy" />
+          <div class="why-img-badge">
+            <div class="num">5★</div>
+            <div class="lbl">Event Excellence</div>
+          </div>
+        </div>
+        <div class="rv d2">
+          <div class="pill-label"><i class="fas fa-bolt"></i> Our Edge</div>
+          <h2 class="section-heading">Why <span class="accent-violet">Build</span><span class="accent-coral">Tek</span>?
+          </h2>
+          <div class="why-items" style="margin-top:2rem;">
+            <div class="why-row">
+              <div class="why-icon-box" style="background:rgba(212,175,55,.12);"><i class="fas fa-layer-group"
+                  style="color:var(--violet-light)"></i></div>
+              <div>
+                <h4>Multi-Sector Mastery</h4>
+                <p>From Pharma to PropTech — we understand the nuances of each vertical. Every summit is deeply
+                  sector-specific, not a generic networking event.</p>
+              </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon-box" style="background:rgba(255,77,109,.15);"><i class="fas fa-filter"
+                  style="color:var(--coral)"></i></div>
+              <div>
+                <h4>Curated, Invite-Only Access</h4>
+                <p>No dilution. Every delegate is vetted. Every room is filled with genuine decision-makers, investors
+                  and founders — not random attendees.</p>
+              </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon-box" style="background:rgba(0,212,255,.15);"><i class="fas fa-globe"
+                  style="color:var(--electric)"></i></div>
+              <div>
+                <h4>Global Reach, Local Intelligence</h4>
+                <p>Pune to Goa to Dubai — international standards combined with deep regional knowledge that global
+                  firms simply cannot replicate.</p>
+              </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon-box" style="background:rgba(0,200,150,.15);"><i class="fas fa-chart-line"
+                  style="color:var(--emerald)"></i></div>
+              <div>
+                <h4>Measurable Business ROI</h4>
+                <p>Partnerships signed. Investments made. Deals closed. Every summit delivers quantifiable outcomes —
+                  not just brand exposure and free coffee.</p>
+              </div>
+            </div>
+            <div class="why-row">
+              <div class="why-icon-box" style="background:rgba(255,182,39,.15);"><i class="fas fa-cogs"
+                  style="color:var(--amber)"></i></div>
+              <div>
+                <h4>End-to-End Excellence</h4>
+                <p>Concept to closing keynote — we handle every detail. Marketing, production, logistics, curation, and
+                  post-event follow-up all in-house.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== NEWSLETTER SECTION ===== -->
+  <section
+    style="padding:6rem 0;background:linear-gradient(135deg,rgba(212,175,55,.05),rgba(9,8,21,.1));border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15);">
+    <div class="section-wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="rv">
+        <div>
+          <div class="pill-label"><i class="fas fa-envelope"></i> Weekly Intelligence</div>
+          <h2 class="section-heading">The Built Environment <span class="accent-violet">Brief</span></h2>
+          <p style="margin-top:1.5rem;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.9;">A curated weekly
+            newsletter for senior leaders in construction, infrastructure, and real estate. Regulatory updates, ConTech
+            trends, and summit access — no noise.</p>
+          <ul style="list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;">
+            <li style="display:flex;align-items:center;gap:.8rem;font-size:.85rem;color:rgba(255,255,255,.7);"><i
+                class="fas fa-check" style="color:var(--violet-light);width:16px;"></i> Industry news as 5-minute
+              executive summaries</li>
+            <li style="display:flex;align-items:center;gap:.8rem;font-size:.85rem;color:rgba(255,255,255,.7);"><i
+                class="fas fa-check" style="color:var(--violet-light);width:16px;"></i> Early access to BuildTek
+              research reports</li>
+            <li style="display:flex;align-items:center;gap:.8rem;font-size:.85rem;color:rgba(255,255,255,.7);"><i
+                class="fas fa-check" style="color:var(--violet-light);width:16px;"></i> Exclusive invites to BuildTek
+              Leadership Series</li>
+            <li style="display:flex;align-items:center;gap:.8rem;font-size:.85rem;color:rgba(255,255,255,.7);"><i
+                class="fas fa-check" style="color:var(--violet-light);width:16px;"></i> 2,400+ senior leaders already
+              subscribed</li>
+          </ul>
+        </div>
+        <div
+          style="background:var(--ink2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:2.5rem;">
+          <h4 style="font-family:var(--font-display);font-size:1.4rem;color:#fff;margin-bottom:.5rem;">Subscribe Free
+          </h4>
+          <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.5rem;">Every Wednesday. Unsubscribe anytime.</p>
+          <form id="nlForm">
+            <div class="form-row">
+              <div class="fl"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required>
+              </div>
+              <div class="fl"><label>Corporate Email</label><input type="email" name="email"
+                  placeholder="you@company.com" required></div>
+            </div>
+            <div class="fl">
+              <label>Your Role</label>
+              <select name="role">
+                <option value="">Select</option>
+                <option>C-Suite / Director</option>
+                <option>VP / Senior Manager</option>
+                <option>Consultant / Investor</option>
+                <option>Government / Policy</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn" style="margin-top:.5rem;"><i class="fas fa-paper-plane"></i>
+              Subscribe to The Brief</button>
+            <div id="nlOk"
+              style="display:none;margin-top:1rem;padding:1rem;background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.3);border-radius:10px;font-size:.82rem;color:var(--emerald);text-align:center;">
+              ✓ You're subscribed! Look for The Built Environment Brief every Wednesday.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VETTING PROCESS ===== -->
+  <section class="vetting-sec">
+    <div class="section-wrap">
+      <div class="rv">
+        <div class="pill-label"><i class="fas fa-shield-halved"></i> Security &amp; Vetting</div>
+        <h2 class="section-heading">How to Join: The <span class="accent-violet">Vetting</span> <span
+            class="accent-coral">Process</span></h2>
+        <p style="margin-top:1rem;font-size:1rem;color:rgba(255,255,255,.6);max-width:600px;">To maintain elite
+          networking quality, all delegates are vetted before entry passes are issued. Fill out the application form
+          below to request access.</p>
+      </div>
+      <div class="vetting-timeline rv d2">
+        <div class="vetting-step">
+          <div class="vetting-num">01</div>
+          <div class="vetting-icon"><i class="fas fa-file-signature"></i></div>
+          <h3>1. Submit Profile</h3>
+          <p>Fill out the application form with your professional credentials, corporate email, and key details.</p>
+        </div>
+        <div class="vetting-step">
+          <div class="vetting-num">02</div>
+          <div class="vetting-icon"><i class="fas fa-user-shield"></i></div>
+          <h3>2. Board Evaluation</h3>
+          <p>Our steering committee reviews the seniority of your role and your company's alignment with our sector
+            themes.</p>
+        </div>
+        <div class="vetting-step">
+          <div class="vetting-num">03</div>
+          <div class="vetting-icon"><i class="fas fa-ticket"></i></div>
+          <h3>3. Pass Issuance</h3>
+          <p>Approved delegates receive their official digital VIP Delegate Pass containing the private venue
+            coordinates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact-sec">
+    <div class="section-wrap">
+      <div class="rv" style="margin-bottom:3rem;">
+        <div class="pill-label"><i class="fas fa-paper-plane"></i> Get In Touch</div>
+        <h2 class="section-heading">Partner <span class="accent-violet">With</span> <span class="accent-coral">Us</span>
+        </h2>
+      </div>
+      <div class="contact-layout rv d1">
+        <div class="contact-left">
+          <div class="contact-left-wrap">
+            <h3
+              style="font-size:1.8rem;line-height:1.2;margin-bottom:0.5rem;text-align:center;font-family:var(--font-display);">
+              VIP Delegate Pass</h3>
+            <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-bottom:1.5rem;max-width:320px;">Your
+              pass updates in real-time as you complete the form. Hover to tilt the holographic pass.</p>
+
+            <!-- Holographic VIP Pass Card -->
+            <div class="pass-card-container" id="passContainer">
+              <div class="pass-card">
+                <div class="pass-shine" id="passShine"></div>
+                <div class="pass-hologram" id="passHologram"></div>
+                <div class="pass-watermark">VIP</div>
+                <div class="pass-header">
+                  <span class="pass-badge">VIP DELEGATE</span>
+                  <div class="pass-chip"></div>
+                </div>
+                <div class="pass-body">
+                  <div class="pass-name" id="passNameText">Your Name</div>
+                  <div class="pass-company" id="passCompanyText">Your Organization</div>
+                </div>
+                <div class="pass-footer">
+                  <div class="pass-summit" id="passSummitText">Select Conclave</div>
+                  <div class="pass-status"><span></span>Vetting Pending</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail-rows"
+            style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);width:100%;">
+            <div class="cd-row">
+              <div class="cd-icon"><i class="fas fa-envelope"></i></div><span>info@buildtek.in</span>
+            </div>
+            <div class="cd-row">
+              <div class="cd-icon"><i class="fas fa-envelope"></i></div><span>partners@buildtek.in</span>
+            </div>
+            <div class="cd-row">
+              <div class="cd-icon"><i class="fas fa-phone"></i></div><span>+91 92263 48550</span>
+            </div>
+            <div class="cd-row">
+              <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div><span>Pune, Maharashtra, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="fl"><label>Full Name</label><input type="text" name="name" placeholder="Your Name" required />
+              </div>
+              <div class="fl"><label>Email</label><input type="email" name="email" placeholder="your@email.com"
+                  required /></div>
+            </div>
+            <div class="form-row">
+              <div class="fl"><label>Company</label><input type="text" name="company" placeholder="Organisation" />
+              </div>
+              <div class="fl"><label>Phone</label><input type="tel" name="phone" placeholder="+91 ..." /></div>
+            </div>
+            <div class="fl">
+              <label>Which Summit?</label>
+              <select name="summit">
+                <option value="">Select a Summit</option>
+                <option value="CORE 2026">CORE Summit 2026 — Pune (July)</option>
+                <option value="PharmaVista">PharmaVista Summit 2026 — Goa (November)</option>
+                <option value="Dubai Realty">Dubai Realty & Build Forum (November)</option>
+                <option value="Multiple">Multiple Events</option>
+              </select>
+            </div>
+            <div class="fl">
+              <label>How Can We Help?</label>
+              <select name="type">
+                <option value="">Select</option>
+                <option>Attend as Delegate</option>
+                <option>Sponsorship / Exhibition</option>
+                <option>Apply as Speaker</option>
+                <option>Media / Partnership</option>
+              </select>
+            </div>
+            <div class="fl">
+              <label>Message</label>
+              <textarea name="message" class="fl-ta" placeholder="Tell us how we can collaborate..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Enquiry →</button>
+            <div class="form-ok" id="formOk">✓ Thank you! Our team will reach out within 24 hours.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="section-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem;">
+            <img src="Logo.jpg" alt="BuildTek Events Logo" style="height: 50px; width: auto; border-radius: 6px; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+              <span class="footer-brand-text" style="font-size: 2.2rem; margin-bottom: 0; line-height: 1.1;">BuildTek</span>
+              <span class="logo-sub" style="margin-top: 2px;">Events</span>
+            </div>
+          </div>
+          <p>Empowering industries and professionals to grow, connect and collaborate through world-class leadership
+            summits across India and the Middle East.</p>
+          <div class="soc-row">
+            <a href="https://www.linkedin.com/company/build-tek-events/" target="_blank" class="soc-btn"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/BuildTekEvents" target="_blank" class="soc-btn"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/build_tek_events/" target="_blank" class="soc-btn"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61587264392058" target="_blank" class="soc-btn"><i
+                class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Summits 2026</h5>
+          <ul>
+            <li><a href="Build Tek Events Website/core-summit-2026.html">CORE Summit — Pune (July)</a></li>
+            <li><a href="#contact">PharmaVista — Goa (Nov)</a></li>
+            <li><a href="#contact">Dubai Realty Forum (Nov)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="Build Tek Events Website/speakers.html">Speakers & Board</a></li>
+            <li><a href="Build Tek Events Website/insights.html">Insights & Reports</a></li>
+            <li><a href="Build Tek Events Website/partnerships.html">Partner With Us</a></li>
+            <li><a href="Build Tek Events Website/privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@buildtek.in">info@buildtek.in</a></li>
+            <li><a href="mailto:partners@buildtek.in">partners@buildtek.in</a></li>
+            <li><a href="tel:+919226348550">+91 92263 48550</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 BuildTek Events. All Rights Reserved.</p>
+        <div class="footer-cities">
+          <span class="city-pill">Pune</span>
+          <span class="city-pill">Goa</span>
+          <span class="city-pill">Dubai</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
+  <a href="https://wa.me/919226348550?text=Hi%20BuildTek%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20summits."
+    target="_blank" id="waBtn" aria-label="Chat on WhatsApp"
+    style="position:fixed;bottom:24px;left:24px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;text-decoration:none;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== EXIT INTENT POPUP ===== -->
+  <div id="exitPopup"
+    style="position:fixed;inset:0;background:rgba(5,5,15,.88);backdrop-filter:blur(10px);z-index:3000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:all .35s;">
+    <div
+      style="background:#0b1628;border:1px solid rgba(197,168,92,.25);border-radius:20px;max-width:520px;width:100%;padding:48px;position:relative;transform:scale(.96);transition:transform .35s;"
+      id="exitPopupInner">
+      <button onclick="closeExitPopup()"
+        style="position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.5);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;"><i
+          class="fas fa-times"></i></button>
+      <div
+        style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(197,168,92,.12);border:1px solid rgba(197,168,92,.25);border-radius:40px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E5D5A8;margin-bottom:20px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#E5D5A8;"></span> Free Executive Report</div>
+      <h3
+        style="font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2;">
+        Before You Go —<br>Download the <em style="font-style:italic;color:#E5D5A8;">2026 ConTech Report</em></h3>
+      <p style="font-size:14px;color:#8F8C99;line-height:1.75;margin-bottom:24px;">AI & BIM adoption benchmarks across
+        India's top 50 construction firms. Free for senior leaders. No spam.</p>
+      <form id="exitForm">
+        <div style="margin-bottom:12px;"><input type="text" name="name" placeholder="Your full name" required
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;outline:none;">
+        </div>
+        <div style="margin-bottom:16px;"><input type="email" name="email" placeholder="Corporate email address" required
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;outline:none;">
+        </div>
+        <button type="submit"
+          style="width:100%;padding:14px;background:linear-gradient(135deg,#C5A85C,#E5D5A8);color:#fff;border:none;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.5px;"><i
+            class="fas fa-download"></i> Send Me the Free Report</button>
+        <div id="exitOk"
+          style="display:none;margin-top:12px;padding:12px;background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.3);border-radius:8px;font-size:13px;color:#34d399;text-align:center;">
+          ✓ Report on its way! Check your inbox.</div>
+      </form>
+      <p style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.25);text-align:center;cursor:pointer;"
+        onclick="closeExitPopup()">No thanks, I don't want free insights</p>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    /* CURSOR */
+    const dot = document.getElementById('cur-dot'), ring = document.getElementById('cur-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+    (function loop() { rx += (mx - rx) * .12; ry += (my - ry) * .12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a,button,.ev-card,.ind-card').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('big'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+    });
+
+    /* HEADER SCROLL */
+    window.addEventListener('scroll', () => document.getElementById('hdr').classList.toggle('stuck', scrollY > 60));
+
+    /* MOBILE MENU */
+    const mobBtn = document.getElementById('mobBtn'), nav = document.getElementById('navLinks');
+    mobBtn.addEventListener('click', () => {
+      const o = nav.classList.toggle('open');
+      mobBtn.innerHTML = o ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); mobBtn.innerHTML = '<i class="fas fa-bars"></i>'; }));
+
+    /* SCROLL REVEAL */
+    const ro = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: .1 });
+    document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+    /* COUNTER */
+    const co = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, tgt = +el.dataset.target, cnt = el.querySelector('.cnt');
+        if (!cnt || cnt.dataset.done) return; cnt.dataset.done = '1';
+        const dur = 1800, st = performance.now();
+        function step(n) {
+          const p = Math.min((n - st) / dur, 1), ease = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+          cnt.textContent = Math.floor(ease * tgt);
+          if (p < 1) requestAnimationFrame(step); else cnt.textContent = tgt;
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: .3 });
+    document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+
+    /* VIDEO SHOWCASE REMOVED - REPLACED WITH STATIC RESPONSIVE SPLASH IMAGE */
+
+    /* CONTACT FORM */
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = this;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      const formData = new FormData(form);
+      const payload = {
+        _subject: 'New Contact Enquiry - BuildTek Events',
+        _template: 'table',
+        _captcha: 'false',
+        'Full Name': formData.get('name'),
+        'Email': formData.get('email'),
+        'Company': formData.get('company') || 'Not specified',
+        'Phone': formData.get('phone') || 'Not specified',
+        'Summit': formData.get('summit') || 'Not specified',
+        'Inquiry Type': formData.get('type') || 'Not specified',
+        'Message': formData.get('message') || 'Not specified'
+      };
+
+      fetch('https://formsubmit.co/ajax/partners@buildtek.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          document.getElementById('formOk').style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        console.warn('FormSubmit failed, using mailto fallback:', error);
+        const subject = encodeURIComponent(payload._subject);
+        const body = encodeURIComponent(
+          'Name: ' + payload['Full Name'] + '\n' +
+          'Email: ' + payload['Email'] + '\n' +
+          'Company: ' + payload['Company'] + '\n' +
+          'Phone: ' + payload['Phone'] + '\n' +
+          'Summit: ' + payload['Summit'] + '\n' +
+          'Type: ' + payload['Inquiry Type'] + '\n' +
+          'Message: ' + payload['Message']
+        );
+        window.open('mailto:partners@buildtek.in?subject=' + subject + '&body=' + body, '_blank');
+      })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    });
+
+    /* NEWSLETTER FORM */
+    document.getElementById('nlForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = this;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+      const formData = new FormData(form);
+      const payload = {
+        _subject: 'New Newsletter Subscription - Built Environment Brief',
+        _template: 'table',
+        _captcha: 'false',
+        'Full Name': formData.get('name'),
+        'Email': formData.get('email'),
+        'Role': formData.get('role') || 'Not specified'
+      };
+
+      fetch('https://formsubmit.co/ajax/partners@buildtek.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          document.getElementById('nlOk').style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        console.warn('FormSubmit failed, using mailto fallback:', error);
+        const subject = encodeURIComponent(payload._subject);
+        const body = encodeURIComponent(
+          'Name: ' + payload['Full Name'] + '\n' +
+          'Email: ' + payload['Email'] + '\n' +
+          'Role: ' + payload['Role']
+        );
+        window.open('mailto:partners@buildtek.in?subject=' + subject + '&body=' + body, '_blank');
+      })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    });
+
+    /* EXIT INTENT POPUP */
+    let exitShown = false;
+    function showExitPopup() {
+      if (exitShown || sessionStorage.getItem('exitDismissed')) return;
+      exitShown = true;
+      const popup = document.getElementById('exitPopup');
+      popup.style.opacity = '1'; popup.style.visibility = 'visible';
+      document.getElementById('exitPopupInner').style.transform = 'scale(1)';
+    }
+    function closeExitPopup() {
+      const popup = document.getElementById('exitPopup');
+      popup.style.opacity = '0'; popup.style.visibility = 'hidden';
+      document.getElementById('exitPopupInner').style.transform = 'scale(.96)';
+      sessionStorage.setItem('exitDismissed', '1');
+    }
+    document.addEventListener('mouseleave', (e) => { if (e.clientY < 5) showExitPopup(); });
+    document.getElementById('exitForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = this;
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending Report Request...';
+
+      const formData = new FormData(form);
+      const payload = {
+        _subject: 'ConTech Report Download Request',
+        _template: 'table',
+        _captcha: 'false',
+        'Full Name': formData.get('name'),
+        'Email': formData.get('email')
+      };
+
+      fetch('https://formsubmit.co/ajax/partners@buildtek.in', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          document.getElementById('exitOk').style.display = 'block';
+          form.reset();
+          setTimeout(closeExitPopup, 2000);
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        console.warn('FormSubmit failed, using mailto fallback:', error);
+        const subject = encodeURIComponent(payload._subject);
+        const body = encodeURIComponent(
+          'Name: ' + payload['Full Name'] + '\n' +
+          'Email: ' + payload['Email']
+        );
+        window.open('mailto:partners@buildtek.in?subject=' + subject + '&body=' + body, '_blank');
+        closeExitPopup();
+      })
+      .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    });
+    document.getElementById('exitPopup').addEventListener('click', function (e) { if (e.target === this) closeExitPopup(); });
+
+    /* WHATSAPP HOVER */
+    const waBtn = document.getElementById('waBtn');
+    waBtn.addEventListener('mouseenter', () => { waBtn.style.transform = 'scale(1.12)'; waBtn.style.boxShadow = '0 8px 30px rgba(37,211,102,.55)'; });
+    waBtn.addEventListener('mouseleave', () => { waBtn.style.transform = 'scale(1)'; waBtn.style.boxShadow = '0 4px 20px rgba(37,211,102,.4)'; });
+
+    /* HOLOGRAPHIC PASS SCRIPT */
+    const passContainer = document.getElementById('passContainer');
+    const passShine = document.getElementById('passShine');
+    const passHologram = document.getElementById('passHologram');
+    const cForm = document.getElementById('contactForm');
+
+    // Live update listeners
+    const nameInput = cForm.querySelector('input[name="name"]');
+    const companyInput = cForm.querySelector('input[name="company"]');
+    const summitInput = cForm.querySelector('select[name="summit"]');
+
+    const passNameText = document.getElementById('passNameText');
+    const passCompanyText = document.getElementById('passCompanyText');
+    const passSummitText = document.getElementById('passSummitText');
+
+    if (nameInput) {
+      nameInput.addEventListener('input', (e) => {
+        passNameText.textContent = e.target.value.trim() || 'Your Name';
+      });
+    }
+    if (companyInput) {
+      companyInput.addEventListener('input', (e) => {
+        passCompanyText.textContent = e.target.value.trim() || 'Your Organization';
+      });
+    }
+    if (summitInput) {
+      summitInput.addEventListener('change', (e) => {
+        const val = e.target.value;
+        if (val === 'CORE 2026') passSummitText.textContent = 'CORE Summit 2026';
+        else if (val === 'PharmaVista') passSummitText.textContent = 'PharmaVista 2026';
+        else if (val === 'Dubai Realty') passSummitText.textContent = 'Dubai Realty 2026';
+        else if (val === 'Multiple') passSummitText.textContent = 'Multiple Events';
+        else passSummitText.textContent = 'Select Conclave';
+      });
+    }
+
+    // 3D Tilt Effect
+    if (passContainer) {
+      passContainer.addEventListener('mousemove', (e) => {
+        const rect = passContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within element
+        const y = e.clientY - rect.top;  // y position within element
+
+        // Normalize coordinates (-0.5 to +0.5)
+        const nx = (x / rect.width) - 0.5;
+        const ny = (y / rect.height) - 0.5;
+
+        // Calculate tilt angles (max tilt 25 degrees)
+        const tiltX = -ny * 25;
+        const tiltY = nx * 25;
+
+        // Apply 3D transform to pass card container
+        passContainer.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+
+        // Move shine spot
+        const px = (x / rect.width) * 100;
+        const py = (y / rect.height) * 100;
+        passShine.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(255, 255, 255, 0.3) 0%, transparent 60%)`;
+
+        // Shift hologram gradient
+        passHologram.style.backgroundPosition = `${px}% ${py}%`;
+      });
+
+      passContainer.addEventListener('mouseleave', () => {
+        // Reset transform and animations
+        passContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        passContainer.style.transition = 'transform 0.5s ease';
+        passShine.style.transition = 'opacity 0.3s';
+      });
+
+      passContainer.addEventListener('mouseenter', () => {
+        passContainer.style.transition = 'none';
+      });
+    }
+  </script>
+
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"Organization","name":"BuildTek Events","url":"https://buildtek.in","logo":"https://buildtek.in/logo.jpg",
+   "contactPoint":{"@type":"ContactPoint","telephone":"+91-9226348550","email":"info@buildtek.in","areaServed":["IN","AE"]}},
+  {"@type":"Event","name":"BuildTek CORE Summit 2026","startDate":"2026-07-11","endDate":"2026-07-12",
+   "eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+   "location":{"@type":"Place","name":"Pune, Maharashtra, India"},"organizer":{"@type":"Organization","name":"BuildTek Events"}},
+  {"@type":"Event","name":"PharmaVista Summit 2026","startDate":"2026-11-01",
+   "eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+   "location":{"@type":"Place","name":"Goa, India"},"organizer":{"@type":"Organization","name":"BuildTek Events"}},
+  {"@type":"Event","name":"Dubai Realty & Build Forum 2026","startDate":"2026-11-01",
+   "eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+   "location":{"@type":"Place","name":"Dubai, UAE"},"organizer":{"@type":"Organization","name":"BuildTek Events"}}
+]}
+</script>
+</body>
+
+</html>
