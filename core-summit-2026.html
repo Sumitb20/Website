@@ -156,24 +156,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         :root {
-            --primary: #050409;
-            --primary-light: #0d0b1a;
-            --accent: #D4AF37;
-            --accent-light: #F3E5AB;
-            --accent-glow: rgba(212, 175, 55, 0.25);
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
+            --primary: #080b13;
+            --primary-light: #121829;
+            --accent: #00e5ff;
+            --accent-light: #e0f7fa;
+            --accent-glow: rgba(0, 229, 255, 0.25);
+            --gold: #ff9f0a;
+            --gold-light: #ffea79;
             --silver: #94a3b8;
             --platinum: #e2e8f0;
             --text: #e2e8f0;
             --text-muted: #8F8C99;
             --text-dark: #64748b;
-            --surface: #090815;
-            --surface-light: #121026;
-            --border: rgba(255, 255, 255, 0.08);
-            --gradient-1: linear-gradient(135deg, #050409 0%, #0f0a26 50%, #050409 100%);
-            --gradient-accent: linear-gradient(135deg, #D4AF37, #F3E5AB);
-            --gradient-gold: linear-gradient(135deg, #D4AF37, #A36B40);
+            --surface: #0b0f19;
+            --surface-light: #171e30;
+            --border: rgba(255, 255, 255, 0.1);
+            --gradient-1: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #080711 100%);
+            --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #06b6d4 100%);
+            --gradient-gold: linear-gradient(135deg, #ff7e5f 0%, #f59e0b 50%, #ffbe53 100%);
+            --gradient-neon: linear-gradient(135deg, #0ed2f7 0%, #ec4899 50%, #7c3aed 100%);
         }
 
         * {
@@ -381,15 +382,16 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, rgba(8, 11, 19, 0.85) 0%, rgba(30, 27, 75, 0.75) 50%, rgba(8, 11, 19, 0.9) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-bg::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%232563eb;stop-opacity:0.08"/><stop offset="100%" style="stop-color:%237c3aed;stop-opacity:0.04"/></linearGradient></defs><rect fill="url(%23g1)" width="1440" height="900"/></svg>');
-            background-size: cover;
+            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
         }
 
         .hero-grid-overlay {
@@ -596,11 +598,24 @@
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 20px;
+            background: rgba(9, 8, 21, 0.65);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 24px;
             padding: 40px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(212, 175, 55, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
         }
 
         .countdown-grid {
@@ -682,16 +697,16 @@
 
         /* ========== SECTIONS COMMON ========== */
         .section {
-            padding: 100px 24px;
+            padding: 120px 24px;
             position: relative;
         }
 
         .section-dark {
-            background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.06) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.04) 0%, transparent 40%), var(--surface);
+            background: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), var(--surface);
         }
 
         .section-darker {
-            background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%), radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.05) 0%, transparent 40%), var(--primary);
+            background: radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.12) 0%, transparent 50%), var(--primary);
         }
 
         .container {
@@ -726,19 +741,30 @@
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 800;
+            font-size: clamp(32px, 4vw, 46px);
+            font-weight: 950;
             color: #fff;
-            margin-bottom: 16px;
-            line-height: 1.2;
+            margin-bottom: 20px;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--text-muted);
-            max-width: 650px;
+            max-width: 680px;
             margin: 0 auto;
             line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* Gradient Separator */
+        .gradient-separator {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.25) 50%, transparent);
+            position: relative;
+            z-index: 10;
         }
 
         /* ========== ABOUT SECTION ========== */
@@ -793,15 +819,27 @@
             border-radius: 20px;
             overflow: hidden;
             aspect-ratio: 4/3;
-            background: var(--gradient-accent);
+            background: linear-gradient(135deg, rgba(8, 11, 19, 0.4) 0%, rgba(99, 102, 241, 0.2) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 229, 255, 0.25);
         }
 
         .about-image-content {
             text-align: center;
             padding: 40px;
+            z-index: 2;
         }
 
         .about-image-content i {
@@ -1355,6 +1393,77 @@
             font-size: 14px;
             color: var(--text-dark);
             font-style: italic;
+        }
+
+        /* ========== SPEAKERS PREVIEW ========== */
+        .speaker-card-preview {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+        }
+
+        .speaker-card-preview:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.08);
+        }
+
+        .speaker-avatar-badge,
+        .speaker-avatar-img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(124, 58, 237, 0.15));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            object-fit: cover;
+        }
+
+        .speaker-card-preview:hover .speaker-avatar-badge,
+        .speaker-card-preview:hover .speaker-avatar-img {
+            border-color: var(--accent-light);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .speaker-card-preview .linkedin-icon-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .speaker-card-preview:hover .linkedin-icon-link {
+            color: var(--accent-light);
+            transform: scale(1.1);
+        }
+
+        .speaker-type-tag {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
         }
 
         /* ========== SPONSORS ========== */
@@ -3109,15 +3218,14 @@
             height: 100%;
             object-fit: cover;
             object-position: center 20%;
-            z-index: 1;
-            mix-blend-mode: luminosity;
-            opacity: 0.8;
+            z-index: 2;
+            opacity: 0.9;
             transition: opacity 0.4s ease, transform 0.6s ease;
         }
 
         .v-card:hover .vc-portrait-img {
             opacity: 1;
-            transform: scale(1.06);
+            transform: scale(1.04);
         }
 
         .vc-portrait-fill {
@@ -3195,6 +3303,498 @@
                 background: linear-gradient(to bottom, transparent 50%, rgba(8, 11, 20, .9) 100%);
             }
         }
+
+        /* ==========================================
+           CORE SUMMIT 2026 REVAMP ADDITIONS
+           ========================================== */
+
+        /* 1. BUTTON SHIMMER & HOVER UPGRADES */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn-primary {
+            color: #0a1628 !important;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.45);
+        }
+
+        .btn-outline:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+        }
+
+        /* 2. DELEGATES GRID RESPONSIVENESS */
+        .delegates-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 992px) {
+            .delegates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .delegates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 3. INTERACTIVE AGENDA ACCORDIONS */
+        .agenda-item.accordion-item {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding: 24px 20px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .agenda-item.accordion-item:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            padding-left: 20px !important;
+        }
+
+        .agenda-item.accordion-item.active {
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.03);
+        }
+
+        .agenda-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .agenda-summary {
+            flex: 1;
+        }
+
+        .agenda-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .accordion-arrow {
+            font-size: 14px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease, color 0.3s ease;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .agenda-item.accordion-item.active .accordion-arrow {
+            transform: rotate(180deg);
+            color: var(--accent-light);
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .agenda-details {
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .agenda-details-inner {
+            padding: 20px 0 0 124px;
+        }
+
+        @media (max-width: 768px) {
+            .agenda-details-inner {
+                padding-left: 0;
+                padding-top: 16px;
+            }
+
+            .agenda-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .accordion-arrow {
+                align-self: flex-end;
+                margin-top: -38px;
+            }
+        }
+
+        .session-features {
+            display: flex;
+            gap: 20px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--accent-light);
+        }
+
+        .session-feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .format-badge {
+            background: rgba(212, 175, 55, 0.08) !important;
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+            color: var(--accent-light) !important;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* 4. PAST CONCLAVE STATS BAR */
+        .stats-bar-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stats-bar-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .stats-bar-num {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .stats-bar-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .stats-bar-divider {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+
+        @media (max-width: 992px) {
+            .stats-bar-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px 20px;
+            }
+
+            .stats-bar-divider {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-bar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 5. TESTIMONIALS SLIDER */
+        .testimonial-slider-container {
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 56px 64px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .testimonial-slider-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+
+        .testimonial-track {
+            position: relative;
+            min-height: 220px;
+        }
+
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .testimonial-slide.active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .testimonial-quote-icon {
+            font-size: 36px;
+            color: rgba(212, 175, 55, 0.2);
+            margin-bottom: 24px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(18px, 2.2vw, 24px);
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(37, 99, 235, 0.2));
+            border: 1.5px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent-light);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-info h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .testimonial-info p {
+            font-size: 12px;
+            color: var(--accent-light);
+            margin-top: 2px;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+        }
+
+        .testimonial-nav-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .testimonial-nav-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent-light);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .testimonial-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .testimonial-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slider-container {
+                padding: 40px 32px 32px;
+            }
+
+            .testimonial-track {
+                min-height: 280px;
+            }
+        }
+
+        /* 6. PAST EVENTS GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(8, 11, 20, 0.95) 0%, rgba(8, 11, 20, 0.4) 60%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 32px;
+            opacity: 0.9;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-content-inner {
+            transform: translateY(15px);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 229, 255, 0.2);
+        }
+
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.08);
+        }
+
+        .gallery-card:hover .gallery-content-inner {
+            transform: translateY(0);
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--gradient-neon);
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-content-inner h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .gallery-content-inner p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -3259,13 +3859,17 @@
                     <span class="pulse"></span>
                     Exclusive Invite-Only Event
                 </div>
-                <h1 class="hero-title">
-                    Build Tek<br><span class="highlight">CORE Summit</span><br>2026
+                <h1 class="hero-title"
+                    style="font-size: clamp(38px, 5vw, 60px); letter-spacing: -1px; margin-bottom: 12px;">
+                    Where the <span class="highlight">Builders</span> of India's Future Converge
                 </h1>
-                <p class="hero-tagline">India's Premier Construction &amp; Infrastructure Leadership Forum</p>
+                <p class="hero-tagline"
+                    style="font-size: clamp(16px, 2.2vw, 22px); font-weight: 500; letter-spacing: 2px;">Build Tek CORE
+                    Summit 2026</p>
                 <p class="hero-subtitle">
-                    The premier leadership forum for decision-makers in Construction,
-                    Real Estate & Infrastructure — converging to shape the future of the built world.
+                    An invite-only C-suite conclave addressing capital strategies, digital execution, and sustainable
+                    growth. Join 500+ CEOs, Directors, and Developers steering India's ₹11 Lakh Crore infrastructure
+                    era.
                 </p>
                 <div class="hero-meta">
                     <div class="hero-meta-item">
@@ -3376,11 +3980,41 @@
                     </ul>
                 </div>
                 <div class="about-image reveal">
-                    <div class="about-image-content">
-                        <i class="fas fa-city"></i>
-                        <h4>Building Tomorrow's World</h4>
-                        <p>Where visionary leaders converge</p>
+                    <div class="about-image-content"
+                        style="background: rgba(8, 11, 20, 0.65); backdrop-filter: blur(12px); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); width: 85%; padding: 32px 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                        <i class="fas fa-city" style="font-size: 44px; color: var(--accent); margin-bottom: 12px;"></i>
+                        <h4 style="font-size: 20px; color: #fff; font-weight: 700;">Building Tomorrow's World</h4>
+                        <p style="font-size: 13px; margin-top: 6px; color: rgba(255,255,255,0.7);">Where visionary
+                            leaders converge</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAST CONCLAVE STATS BAR ========== -->
+    <section class="section section-dark stats-bar-section"
+        style="padding: 40px 24px; background: rgba(9, 8, 21, 0.4); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="stats-bar-grid">
+                <div class="stats-bar-item reveal">
+                    <div class="stats-bar-num">₹5,000Cr+</div>
+                    <div class="stats-bar-label">Projects Represented</div>
+                </div>
+                <div class="stats-bar-divider"></div>
+                <div class="stats-bar-item reveal">
+                    <div class="stats-bar-num">94%</div>
+                    <div class="stats-bar-label">CXO &amp; Director Attendance</div>
+                </div>
+                <div class="stats-bar-divider"></div>
+                <div class="stats-bar-item reveal">
+                    <div class="stats-bar-num">150+</div>
+                    <div class="stats-bar-label">Corporate Partners</div>
+                </div>
+                <div class="stats-bar-divider"></div>
+                <div class="stats-bar-item reveal">
+                    <div class="stats-bar-num">30+</div>
+                    <div class="stats-bar-label">Cities Represented</div>
                 </div>
             </div>
         </div>
@@ -3618,75 +4252,7 @@
         </div>
     </section>
 
-    <!-- ========== FEATURED SPEAKERS PREVIEW ========== -->
-    <section class="section section-darker" id="speakers-preview">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">Confirmed Speakers</div>
-                <h2 class="section-title">Voices Shaping the Future</h2>
-                <p class="section-subtitle">Every speaker is a practitioner, not a commentator. These are the executives
-                    writing the playbooks for India's next decade of infrastructure growth.</p>
-            </div>
-            <div class="format-grid" style="grid-template-columns: repeat(4,1fr); gap: 20px;">
-                <div class="format-card reveal"
-                    style="text-align:left; padding: 24px; position: relative; overflow: hidden;">
-                    <div
-                        style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,rgba(197,168,92,.2),rgba(124,58,237,.1));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:800;background-clip:text;color:var(--accent-light);border:1px solid rgba(197,168,92,.2);margin-bottom:16px;">
-                        SK</div>
-                    <div
-                        style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px;">
-                        Keynote</div>
-                    <h4
-                        style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;">
-                        Sanjay Kirloskar</h4>
-                    <p style="font-size:12px;color:var(--text-muted);">Chairman &amp; MD, Kirloskar Brothers Ltd.</p>
-                </div>
-                <div class="format-card reveal" style="text-align:left; padding: 24px;">
-                    <div
-                        style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,rgba(197,168,92,.2),rgba(124,58,237,.1));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--accent-light);border:1px solid rgba(197,168,92,.2);margin-bottom:16px;">
-                        MI</div>
-                    <div
-                        style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px;">
-                        Keynote</div>
-                    <h4
-                        style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;">
-                        Meera Iyer</h4>
-                    <p style="font-size:12px;color:var(--text-muted);">VP Sustainability &amp; ESG, Godrej Properties
-                    </p>
-                </div>
-                <div class="format-card reveal" style="text-align:left; padding: 24px;">
-                    <div
-                        style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,rgba(197,168,92,.2),rgba(124,58,237,.1));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--accent-light);border:1px solid rgba(197,168,92,.2);margin-bottom:16px;">
-                        AK</div>
-                    <div
-                        style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px;">
-                        Panel</div>
-                    <h4
-                        style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;">
-                        Arun Kumar</h4>
-                    <p style="font-size:12px;color:var(--text-muted);">Global Head ConTech, Autodesk India</p>
-                </div>
-                <div class="format-card reveal" style="text-align:left; padding: 24px;">
-                    <div
-                        style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,rgba(197,168,92,.2),rgba(124,58,237,.1));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--accent-light);border:1px solid rgba(197,168,92,.2);margin-bottom:16px;">
-                        VD</div>
-                    <div
-                        style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-light);margin-bottom:4px;">
-                        Roundtable</div>
-                    <h4
-                        style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:3px;">
-                        Vikram Dhawan</h4>
-                    <p style="font-size:12px;color:var(--text-muted);">MD Infrastructure, HDFC Capital Advisors</p>
-                </div>
-            </div>
-            <div style="text-align:center;margin-top:40px;" class="reveal">
-                <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">40+ confirmed speakers across
-                    keynotes, panels, and closed roundtables.</p>
-                <a href="speakers.html" class="btn btn-outline"><i class="fas fa-users"></i> View All Speakers &amp;
-                    Advisory Board</a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ========== SPOTLIGHT VISIONARIES STACK ========== -->
     <section class="spotlight-section" id="spotSection">
@@ -3724,8 +4290,7 @@
                         </div>
                     </div>
                     <div class="vc-right">
-                        <img src="assets/speakers/speaker-1.jpg" alt="Kunal Gholap" class="vc-portrait-img"
-                            onerror="this.style.display='none'">
+                        <img src="Assets/speakers/speaker-1.jpg" alt="Kunal Gholap" class="vc-portrait-img">
                         <div class="vc-portrait-fill"></div>
                         <div class="vc-portrait-glow"></div>
                         <div class="vc-silhouette">
@@ -3744,7 +4309,7 @@
                         <span class="vc-index">02 / 05</span>
                         <div class="vc-body">
                             <h2 class="vc-name">Dr. Abhijeet<br>Sarkar</h2>
-                            <p class="vc-role">Leader</p>
+                            <p class="vc-role">Principle Advisor (Real Estate)</p>
                             <p class="vc-company">MY Branch</p>
                             <div class="vc-div"></div>
                             <blockquote class="vc-quote">The future of business growth belongs to intelligent ecosystems
@@ -3760,8 +4325,7 @@
                         </div>
                     </div>
                     <div class="vc-right">
-                        <img src="assets/speakers/speaker-2.jpg" alt="Dr. Abhijeet Sarkar" class="vc-portrait-img"
-                            onerror="this.style.display='none'">
+                        <img src="Assets/speakers/speaker-2.jpg" alt="Dr. Abhijeet Sarkar" class="vc-portrait-img">
                         <div class="vc-portrait-fill"></div>
                         <div class="vc-portrait-glow"></div>
                         <div class="vc-silhouette">
@@ -3796,8 +4360,7 @@
                         </div>
                     </div>
                     <div class="vc-right">
-                        <img src="assets/speakers/speaker-3.jpg" alt="Ashish Singh" class="vc-portrait-img"
-                            onerror="this.style.display='none'">
+                        <img src="Assets/speakers/speaker-3.jpg" alt="Ashish Singh" class="vc-portrait-img">
                         <div class="vc-portrait-fill"></div>
                         <div class="vc-portrait-glow"></div>
                         <div class="vc-silhouette">
@@ -3832,8 +4395,7 @@
                         </div>
                     </div>
                     <div class="vc-right">
-                        <img src="assets/speakers/speaker-4.jpg" alt="Anirban Sanyal" class="vc-portrait-img"
-                            onerror="this.style.display='none'">
+                        <img src="Assets/speakers/speaker-4.jpg" alt="Anirban Sanyal" class="vc-portrait-img">
                         <div class="vc-portrait-fill"></div>
                         <div class="vc-portrait-glow"></div>
                         <div class="vc-silhouette">
@@ -3868,8 +4430,7 @@
                         </div>
                     </div>
                     <div class="vc-right">
-                        <img src="assets/speakers/speaker-5.jpg" alt="Mohit Goyal" class="vc-portrait-img"
-                            onerror="this.style.display='none'">
+                        <img src="Assets/speakers/speaker-5.jpg" alt="Mohit Goyal" class="vc-portrait-img">
                         <div class="vc-portrait-fill"></div>
                         <div class="vc-portrait-glow"></div>
                         <div class="vc-silhouette">
@@ -3881,6 +4442,88 @@
 
             <!-- FIXED: Increased height here to prevent overlap with the next section -->
             <div class="card-spacer" style="height:100vh"></div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="section section-dark" id="testimonials"
+        style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Social Proof</div>
+                <h2 class="section-title">Endorsed by Industry Titans</h2>
+                <p class="section-subtitle">
+                    Hear from the developers, contractors, and executives who attended our past conclaves and summits.
+                </p>
+            </div>
+
+            <div class="testimonial-slider-container reveal">
+                <div class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">
+                            "The CORE Summit is the only event in India that gets the actual decision-makers in a room
+                            without the distraction of sales pitches. The discussions on digital twins and project risk
+                            management were incredibly practical."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=128&h=128&q=80"
+                                class="testimonial-avatar" alt="Abhinav Sinha">
+                            <div class="testimonial-info">
+                                <h4>Abhinav Sinha</h4>
+                                <p>VP Procurement &amp; ConTech, Tata Projects Ltd.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">
+                            "Pune has become a key node for real estate expansion. The insights gathered at CORE on
+                            green financing and BRSR compliance have shaped our sustainability targets for the upcoming
+                            fiscal year."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=128&h=128&q=80"
+                                class="testimonial-avatar" alt="Rajesh Patel">
+                            <div class="testimonial-info">
+                                <h4>Rajesh Patel</h4>
+                                <p>Managing Director, Lodha Developers Group</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">
+                            "An excellent forum for genuine peer exchange. Meeting with procurement directors from
+                            Godrej and Sobha in closed roundtables allowed us to align on supply chain mitigation
+                            strategies."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=128&h=128&q=80"
+                                class="testimonial-avatar" alt="Nikhil Kulkarni">
+                            <div class="testimonial-info">
+                                <h4>Nikhil Kulkarni</h4>
+                                <p>Chief Projects Officer, Shapoorji Pallonji Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-nav-btn prev" onclick="prevTestimonial()"
+                        aria-label="Previous Testimonial"><i class="fas fa-arrow-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="testimonial-dot active" onclick="setTestimonial(0)"></span>
+                        <span class="testimonial-dot" onclick="setTestimonial(1)"></span>
+                        <span class="testimonial-dot" onclick="setTestimonial(2)"></span>
+                    </div>
+                    <button class="testimonial-nav-btn next" onclick="nextTestimonial()"
+                        aria-label="Next Testimonial"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -3896,7 +4539,7 @@
                     We maintain a strict 3:1 ratio of buyers to service providers.
                 </p>
             </div>
-            <div class="attend-grid reveal" style="grid-template-columns: repeat(4, 1fr); gap: 16px;">
+            <div class="delegates-grid reveal">
                 <div class="attend-card" style="padding: 16px; background: rgba(255,255,255,0.02);">
                     <div class="attend-icon" style="background: rgba(197, 168, 92, 0.1); color: var(--accent);"><i
                             class="fas fa-user-shield"></i></div>
@@ -4079,122 +4722,390 @@
             <div class="agenda-timeline reveal">
                 <!-- Day 1 -->
                 <div class="agenda-day active" id="day1">
-                    <div class="agenda-item">
-                        <div class="agenda-time">09:00 AM</div>
-                        <div class="agenda-content">
-                            <h4>Registration & Welcome Breakfast</h4>
-                            <p>Networking and check-in for all delegates</p>
+                    <!-- Item 1 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">09:00 AM</div>
+                            <div class="agenda-summary">
+                                <h4>Registration & Welcome Breakfast</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🍳 Networking</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Networking and check-in for all delegates. Retrieve your credentials, executive
+                                    summit handbook, and pre-scheduled meeting roster while enjoying a premium breakfast
+                                    buffet.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 60 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Grand Ballroom
+                                        Foyer</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">10:00 AM</div>
-                        <div class="agenda-content">
-                            <h4>Opening Keynote: India's Infrastructure Roadmap 2030</h4>
-                            <p>Setting the context for the next decade of nation-building</p>
-                            <span class="agenda-tag">Keynote</span>
+                    <!-- Item 2 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">10:00 AM</div>
+                            <div class="agenda-summary">
+                                <h4>Opening Keynote: India's Infrastructure Roadmap 2030</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🎤 Keynote</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>A high-powered opening address charting Pune's growth corridor, regulatory changes in
+                                    real estate, and capital frameworks steering India's ₹11 Lakh Crore infrastructure
+                                    boom.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 60 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">11:00 AM</div>
-                        <div class="agenda-content">
-                            <h4>Power Panel: Capital Flow & Investment Strategy</h4>
-                            <p>How smart capital is reshaping construction and real estate</p>
-                            <span class="agenda-tag">Panel Discussion</span>
+                    <!-- Item 3 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">11:00 AM</div>
+                            <div class="agenda-summary">
+                                <h4>Power Panel: Capital Flow & Investment Strategy</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">👥 Panel Discussion</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>How smart capital, FDI, REITs, and private equity are reshuffling real estate and
+                                    infrastructure development. Panelists share strategies for liquidity, capital
+                                    structuring, and portfolio diversification.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">12:30 PM</div>
-                        <div class="agenda-content">
-                            <h4>Networking Lunch</h4>
-                            <p>Curated networking with AI-powered matchmaking</p>
+                    <!-- Item 4 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">12:30 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Networking Lunch</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🤝 Networking</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>C-Suite dining with targeted matchmaking. Swap perspectives and cards with peers from
+                                    across the country over a curated lunch buffet.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Terrace Banquet
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">02:00 PM</div>
-                        <div class="agenda-content">
-                            <h4>Masterclass: Project Execution Excellence</h4>
-                            <p>Eliminating cost overruns and delivering on time, every time</p>
-                            <span class="agenda-tag">Masterclass</span>
+                    <!-- Item 5 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">02:00 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Masterclass: Project Execution Excellence</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🎓 Masterclass</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Practical methods to eliminate project cost overruns and construction delays.
+                                    Discover real-world case studies detailing structural planning frameworks and
+                                    schedule compliance strategies.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Hall A Seminar
+                                        Room</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">03:30 PM</div>
-                        <div class="agenda-content">
-                            <h4>Closed-Door Roundtable: Leadership in Crisis</h4>
-                            <p>Executive-only session on navigating uncertainty</p>
-                            <span class="agenda-tag">Roundtable</span>
+                    <!-- Item 6 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">03:30 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Closed-Door Roundtable: Leadership in Crisis</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🔒 Roundtable</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Off-the-record, invite-only roundtable. A candid swap of peer strategies on resolving
+                                    supply chain shocks, navigating inflation, and building resilient organizational
+                                    frameworks.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Executive
+                                        Boardroom</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">05:00 PM</div>
-                        <div class="agenda-content">
-                            <h4>Day 1 Closing & VIP Networking Reception</h4>
-                            <p>Cocktails and high-impact connections</p>
+                    <!-- Item 7 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">05:00 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Day 1 Closing & VIP Networking Reception</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🥂 Reception</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Wind down after a day of intense strategy sessions. Reconnect with peers, sponsors,
+                                    and speakers over cocktails, mocktails, and live jazz.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 120 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Rooftop Pavilion
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Day 2 -->
                 <div class="agenda-day" id="day2">
-                    <div class="agenda-item">
-                        <div class="agenda-time">09:00 AM</div>
-                        <div class="agenda-content">
-                            <h4>Morning Networking & Coffee</h4>
-                            <p>Connect with fellow leaders before sessions begin</p>
+                    <!-- Item 1 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">09:00 AM</div>
+                            <div class="agenda-summary">
+                                <h4>Morning Networking & Coffee</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">☕ Networking</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Kick start the technology focus day with artisan coffee, networking, and early access
+                                    to partnership booths.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 30 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Exhibition Atrium
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">09:30 AM</div>
-                        <div class="agenda-content">
-                            <h4>Keynote: AI & the Future of Construction</h4>
-                            <p>How artificial intelligence is revolutionizing the entire value chain</p>
-                            <span class="agenda-tag">Keynote</span>
+                    <!-- Item 2 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">09:30 AM</div>
+                            <div class="agenda-summary">
+                                <h4>Keynote: AI & the Future of Construction</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🎤 Keynote</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Discover how leading groups leverage Generative AI for structural blueprints, BIM,
+                                    automated schedule analysis, and predictive logistics routing on site.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 60 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">10:30 AM</div>
-                        <div class="agenda-content">
-                            <h4>Power Panel: Digital Transformation at Scale</h4>
-                            <p>BIM, IoT, digital twins — from pilot to enterprise-wide adoption</p>
-                            <span class="agenda-tag">Panel Discussion</span>
+                    <!-- Item 3 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">10:30 AM</div>
+                            <div class="agenda-summary">
+                                <h4>Power Panel: Digital Transformation at Scale</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">👥 Panel Discussion</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>BIM, IoT sensors, drone audits, and digital twins — strategies for enterprise-wide
+                                    rollouts and overcoming contractor/staff adoption friction.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">12:00 PM</div>
-                        <div class="agenda-content">
-                            <h4>ESG & Sustainability: Building Net-Zero</h4>
-                            <p>Green building mandates, carbon credits, and sustainable supply chains</p>
-                            <span class="agenda-tag">Keynote</span>
+                    <!-- Item 4 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">12:00 PM</div>
+                            <div class="agenda-summary">
+                                <h4>ESG & Sustainability: Building Net-Zero</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🎤 Keynote</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Complying with BRSR requirements. Discover strategies for embodied carbon tracking,
+                                    sustainable supply procurement, and utilizing green financing to slash capital
+                                    costs.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 60 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">01:00 PM</div>
-                        <div class="agenda-content">
-                            <h4>Networking Lunch & Exhibition Walk</h4>
-                            <p>Explore partner booths and technology showcases</p>
+                    <!-- Item 5 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">01:00 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Networking Lunch & Exhibition Walk</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🥗 Networking</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Dine while exploring hands-on ConTech demonstrations, green material showcases, and
+                                    interactive partner booths.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Exhibition Atrium
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">02:30 PM</div>
-                        <div class="agenda-content">
-                            <h4>Future of Workforce: Skills, Safety & Culture</h4>
-                            <p>Addressing the talent gap and building safety-first organizations</p>
-                            <span class="agenda-tag">Panel Discussion</span>
+                    <!-- Item 6 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">02:30 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Future of Workforce: Skills, Safety & Culture</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">👥 Panel Discussion</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Solving the skilled labor deficit, implementing smart safety tech (wearables,
+                                    computer vision), and establishing zero-incident site cultures.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">04:00 PM</div>
-                        <div class="agenda-content">
-                            <h4>Closing Keynote: The Road Ahead</h4>
-                            <p>A visionary address on what's next for the industry</p>
-                            <span class="agenda-tag">Keynote</span>
+                    <!-- Item 7 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">04:00 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Closing Keynote: The Road Ahead</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🎤 Keynote</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Synthesizing summit learnings into a pragmatic leadership checklist for Indian
+                                    infrastructure and real estate executives guiding projects through 2027.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 60 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Auditorium Main
+                                        Stage</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="agenda-item">
-                        <div class="agenda-time">05:00 PM</div>
-                        <div class="agenda-content">
-                            <h4>Summit Closing & Awards Ceremony</h4>
-                            <p>Recognizing excellence and innovation in the built world</p>
+                    <!-- Item 8 -->
+                    <div class="agenda-item accordion-item" onclick="toggleAgendaAccordion(this)" tabindex="0"
+                        role="button" aria-expanded="false">
+                        <div class="agenda-header-row">
+                            <div class="agenda-time">05:00 PM</div>
+                            <div class="agenda-summary">
+                                <h4>Summit Closing & Awards Ceremony</h4>
+                                <div class="agenda-meta-row">
+                                    <span class="agenda-tag format-badge">🏆 Awards</span>
+                                </div>
+                            </div>
+                            <div class="accordion-arrow"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="agenda-details">
+                            <div class="agenda-details-inner">
+                                <p>Concluding remarks followed by presentation of the Build Tek Innovation &amp; Project
+                                    Excellence Awards, honoring standout achievements in digitalization and sustainable
+                                    building.</p>
+                                <div class="session-features">
+                                    <div class="session-feature"><i class="far fa-clock"></i> 90 Mins</div>
+                                    <div class="session-feature"><i class="fas fa-map-marker-alt"></i> Grand Ballroom
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4302,6 +5213,59 @@
                     <i class="fas fa-bullhorn"></i>
                     <h3>Brand Positioning</h3>
                     <p>Multi-channel visibility across digital, print, and on-site branding throughout the summit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAST EVENTS GALLERY ========== -->
+    <section class="section section-darker" id="gallery"
+        style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Moments & Legacy</div>
+                <h2 class="section-title">Highlights from Past Conclaves</h2>
+                <p class="section-subtitle">
+                    A glimpse of the collaborative energy, visionary dialogues, and high-value connections forged at
+                    Build Tek's previous executive gatherings.
+                </p>
+            </div>
+            <div class="gallery-grid reveal">
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
+                        alt="Keynote Address" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content-inner">
+                            <span class="gallery-tag">Mainstage Keynote</span>
+                            <h3>Strategic Vision Talks</h3>
+                            <p>Industry pioneers sharing critical insights on India's real estate & infrastructure boom.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80"
+                        alt="Executive Networking" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content-inner">
+                            <span class="gallery-tag">VIP Lounge</span>
+                            <h3>High-Value Networking</h3>
+                            <p>CEOs and Directors aligning strategies and exploring cross-company business
+                                collaborations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e08562744ad?auto=format&fit=crop&w=800&q=80"
+                        alt="Closed-Door Roundtable" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content-inner">
+                            <span class="gallery-tag">Closed Roundtable</span>
+                            <h3>Candid Discussions</h3>
+                            <p>Intimate off-the-record dialogues on overcoming supply-chain shocks and project delays.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -4608,13 +5572,15 @@
                 </p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/build-tek-events/" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://x.com/BuildTekEvents" target="_blank" rel="noopener noreferrer"><i
-                            class="fab fa-x-twitter"></i></a>
-                    <a href="https://www.instagram.com/build_tek_events/" target="_blank" rel="noopener noreferrer"><i
-                            class="fab fa-instagram"></i></a>
+                        rel="noopener noreferrer" aria-label="BuildTek Events LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/BuildTekEvents" target="_blank" rel="noopener noreferrer"
+                        aria-label="BuildTek Events Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/build_tek_events/" target="_blank" rel="noopener noreferrer"
+                        aria-label="BuildTek Events Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/people/Build-Tek-Events/61587264392058/" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        rel="noopener noreferrer" aria-label="BuildTek Events Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -4665,7 +5631,8 @@
     <!-- ========== MODAL: LEAD CAPTURE ========== -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal"><i
+                    class="fas fa-times"></i></button>
             <h3 id="modalTitle">Partner With Us</h3>
             <p id="modalSubtitle">Fill in your details and our team will connect with you within 24 hours.</p>
             <form id="leadForm" onsubmit="handleFormSubmit(event)">
@@ -5040,11 +6007,169 @@
         }
 
         // ===== AGENDA TABS =====
-        function switchDay(day) {
-            document.querySelectorAll('.agenda-tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.agenda-day').forEach(d => d.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('day' + day).classList.add('active');
+        function switchDay(day, tabEl) {
+            const tabs = document.querySelectorAll('.agenda-tab');
+            const days = document.querySelectorAll('.agenda-day');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            if (tabEl) {
+                tabEl.classList.add('active');
+            } else if (event && event.target) {
+                event.target.classList.add('active');
+            } else {
+                const targetTab = Array.from(tabs).find(t => t.getAttribute('onclick').includes(day));
+                if (targetTab) targetTab.classList.add('active');
+            }
+
+            const targetDay = document.getElementById('day' + day);
+            if (!targetDay) return;
+
+            const currentActiveDay = document.querySelector('.agenda-day.active');
+            if (currentActiveDay && currentActiveDay !== targetDay) {
+                gsap.to(currentActiveDay, {
+                    opacity: 0,
+                    y: 15,
+                    duration: 0.25,
+                    onComplete: () => {
+                        currentActiveDay.classList.remove('active');
+                        gsap.set(targetDay, { opacity: 0, y: -15 });
+                        targetDay.classList.add('active');
+                        gsap.to(targetDay, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.35,
+                            ease: 'power2.out'
+                        });
+                    }
+                });
+            } else {
+                days.forEach(d => d.classList.remove('active'));
+                targetDay.classList.add('active');
+                gsap.fromTo(targetDay,
+                    { opacity: 0, y: -15 },
+                    { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+                );
+            }
+        }
+
+        // ===== AGENDA ACCORDION =====
+        function toggleAgendaAccordion(element) {
+            const details = element.querySelector('.agenda-details');
+            if (!details) return;
+            const isExpanding = !element.classList.contains('active');
+
+            // Close other accordions in the active day timeline
+            const activeDay = element.closest('.agenda-day');
+            if (activeDay) {
+                activeDay.querySelectorAll('.agenda-item.accordion-item.active').forEach(item => {
+                    if (item !== element) {
+                        item.classList.remove('active');
+                        item.setAttribute('aria-expanded', 'false');
+                        const otherDetails = item.querySelector('.agenda-details');
+                        if (otherDetails) {
+                            gsap.to(otherDetails, {
+                                height: 0,
+                                opacity: 0,
+                                duration: 0.3,
+                                ease: 'power2.out'
+                            });
+                        }
+                    }
+                });
+            }
+
+            if (isExpanding) {
+                element.classList.add('active');
+                element.setAttribute('aria-expanded', 'true');
+                // Calculate height auto
+                gsap.set(details, { height: 'auto' });
+                const targetHeight = details.offsetHeight;
+                gsap.set(details, { height: 0, opacity: 0 });
+
+                gsap.to(details, {
+                    height: targetHeight,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'power3.out'
+                });
+            } else {
+                element.classList.remove('active');
+                element.setAttribute('aria-expanded', 'false');
+                gsap.to(details, {
+                    height: 0,
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+        }
+
+        // ===== TESTIMONIAL SLIDER =====
+        let currentTestimonialIndex = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+        function showTestimonial(index) {
+            if (!testimonialSlides.length) return;
+            if (index < 0) index = testimonialSlides.length - 1;
+            if (index >= testimonialSlides.length) index = 0;
+
+            const currentActive = document.querySelector('.testimonial-slide.active');
+            const targetSlide = testimonialSlides[index];
+
+            if (currentActive && currentActive !== targetSlide) {
+                gsap.to(currentActive, {
+                    opacity: 0,
+                    duration: 0.25,
+                    onComplete: () => {
+                        currentActive.classList.remove('active');
+                        gsap.set(targetSlide, { opacity: 0 });
+                        targetSlide.classList.add('active');
+                        gsap.to(targetSlide, {
+                            opacity: 1,
+                            duration: 0.35,
+                            ease: 'power1.out'
+                        });
+                    }
+                });
+            } else {
+                testimonialSlides.forEach(slide => slide.classList.remove('active'));
+                if (targetSlide) {
+                    targetSlide.classList.add('active');
+                    gsap.fromTo(targetSlide, { opacity: 0 }, { opacity: 1, duration: 0.35 });
+                }
+            }
+
+            // Update dots
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            if (testimonialDots[index]) {
+                testimonialDots[index].classList.add('active');
+            }
+
+            currentTestimonialIndex = index;
+        }
+
+        function nextTestimonial() {
+            showTestimonial(currentTestimonialIndex + 1);
+        }
+
+        function prevTestimonial() {
+            showTestimonial(currentTestimonialIndex - 1);
+        }
+
+        function setTestimonial(index) {
+            showTestimonial(index);
+        }
+
+        // Auto play testimonials
+        let testimonialInterval = setInterval(nextTestimonial, 8000);
+
+        // Pause auto play on hover
+        const sliderContainer = document.querySelector('.testimonial-slider-container');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
+            sliderContainer.addEventListener('mouseleave', () => testimonialInterval = setInterval(nextTestimonial, 8000));
         }
 
         // ===== MODAL =====
@@ -5789,8 +6914,23 @@
                             partnersGrid.appendChild(logoDiv);
                         });
                     }
+
+                    // Refresh ScrollTrigger to recalculate offsets of sections below the dynamic grid
+                    setTimeout(() => {
+                        ScrollTrigger.refresh();
+                    }, 200);
                 }
             }
+
+            // 3. Add accessibility keyboard interaction for accordions
+            document.querySelectorAll('.agenda-item.accordion-item').forEach(item => {
+                item.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleAgendaAccordion(this);
+                    }
+                });
+            });
         });
     </script>
 
